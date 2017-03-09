@@ -1,0 +1,68 @@
+Your infx expression is: a+b*c+(c*a+d)*b
+
+Stack state(from buttom to top): + 
+
+Stack state(from buttom to top): + * 
+
+Poping until meet a upper operator
+
+Stack state(from buttom to top): + 
+
+Stack state(from buttom to top): + ( 
+
+Poping until meet a upper operator
+Stack state(from buttom to top): + ( 
+
+Stack state(from buttom to top): + ( * 
+
+Poping until meet a upper operator
+Stack state(from buttom to top): + ( 
+
+Poping until left bracket
+Stack state(from buttom to top): + 
+
+Stack state(from buttom to top): + 
+
+
+The postfix expression is: abc*+ca*d+b*+
+
+a's value is: 10
+b's value is: 2
+c's value is: 3
+d's value is: 5
+
+Stack state(from buttom to top): 10 2 3 
+Poping A = 2 and B = 3
+Pushing A * B to stack
+Stack state(from buttom to top): 10 6 
+
+Stack state(from buttom to top): 10 6 
+Poping A = 10 and B = 6
+Pushing A + B to stack
+Stack state(from buttom to top): 16 
+
+Stack state(from buttom to top): 16 3 10 
+Poping A = 3 and B = 10
+Pushing A * B to stack
+Stack state(from buttom to top): 16 30 
+
+Stack state(from buttom to top): 16 30 5 
+Poping A = 30 and B = 5
+Pushing A + B to stack
+Stack state(from buttom to top): 16 35 
+
+Stack state(from buttom to top): 16 35 2 
+Poping A = 35 and B = 2
+Pushing A * B to stack
+Stack state(from buttom to top): 16 70 
+
+Stack state(from buttom to top): 16 70 
+Poping A = 16 and B = 70
+Pushing A + B to stack
+Stack state(from buttom to top): 86 
+
+
+The postfix expression is: abc*+ca*d+b*+
+
+According to postfix, its value is: 86
+

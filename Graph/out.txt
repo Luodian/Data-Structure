@@ -1,0 +1,124 @@
+Please Input The Vexnum:n and Arcnum:m :
+***** First we construct a graph in matrix ****
+
+	* 3 * * * 4 * * 
+	* * 2 4 1 * * * 
+	* * * 3 * * * * 
+	* * * * * * * * 
+	* * * * * 6 * * 
+	* * * * * * 3 * 
+	* * * * * * * 3 
+	* * * * * * * * 
+
+
+******** Now we are using three ways to travesal with matrix *********
+
+Traversal with deep first way
+The sequences is: 
+1 2 3 4 5 6 7 8 
+The dfn number sequences is: 
+1 2 3 4 5 6 7 8 
+
+Traversal with non-recursion deep first way
+The sequences is: 
+The 1 th path is :1 2 3 4 
+The 2 th path is :5 6 7 8 
+
+Breadth first way to traversal
+The sequences is: 
+1 2 6 3 4 5 7 8 
+
+The bfsn number is: 
+1 2 2 3 3 3 4 5 
+
+For the root 1 it has childs : 2 6 
+
+For the root 2 it has childs : 3 4 5 
+
+For the root 3 it has childs : 7 
+
+For the root 4 it has childs : 8 
+
+***** Then we transfer this matrix to adjacent list ****
+
+For Node 1 it has out nodes: 
+1->6: 4
+1->2: 3
+
+For Node 2 it has out nodes: 
+2->5: 1
+2->4: 4
+2->3: 2
+
+For Node 3 it has out nodes: 
+3->4: 3
+
+For Node 4 it has out nodes: 
+
+For Node 5 it has out nodes: 
+5->6: 6
+
+For Node 6 it has out nodes: 
+6->7: 3
+
+For Node 7 it has out nodes: 
+7->8: 3
+
+For Node 8 it has out nodes: 
+
+
+
+******** Now we are using three ways to travesal with list *********
+
+Traversal with deep first way
+The sequences is :1 6 7 8 2 5 4 3 
+
+Traversal with deep first way and without recursion
+The sequences is: 1 6 7 8 2 5 3 4 
+
+Breadth first way to traversal
+The breadth firstsequences is: 1 6 2 7 5 4 3 8 
+
+
+***** Last we transfer this adjacent list to xlist ****
+
+The form of xlist is like this
+
+For Node 1 it has in nodes: 
+
+For Node 2 it has in nodes: 
+1 -> 2: 3
+
+For Node 3 it has in nodes: 
+2 -> 3: 2
+
+For Node 4 it has in nodes: 
+3 -> 4: 3
+2 -> 4: 4
+
+For Node 5 it has in nodes: 
+2 -> 5: 1
+
+For Node 6 it has in nodes: 
+5 -> 6: 6
+1 -> 6: 4
+
+For Node 7 it has in nodes: 
+6 -> 7: 3
+
+For Node 8 it has in nodes: 
+7 -> 8: 3
+
+
+
+******** Now we are using three ways to travesal with xlist *********
+
+Traversal this graph 
+The sequences is :1 2 3 4 5 6 7 8 
+
+Traversal this xlist without recursion 
+The sequences is: 1 2 3 4 5 6 7 8 
+
+Traversal this xlist 
+The sequences is: 1 2 6 3 4 5 7 8 
+

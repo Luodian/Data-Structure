@@ -1,0 +1,84 @@
+Welcome to calculator of polynomials
+Enter Add To Get The Sum Of Two Polynomials
+Enter Sub To Subtract Two Polynomials
+Enter Mut To Mutiply Two Polynomials
+Enter Div To Divide A from B
+Enter Mod To Mod A from B
+Enter Get To Get Value In A Specified Polynomial
+Enter Other Button To Quit
+What's your choice : 
+Please Input The Polynomials: You Have Inserted A Polynomials : 343x^32 + 1x^23 + 12x^3
+
+Please Input The Polynomials: You Have Inserted A Polynomials : 1x^14 + 32x^2
+
+The Ans of A + B = 343x^32 + 1x^23 + 1x^14 + 12x^3 + 32x^2
+
+Welcome to calculator of polynomials
+Enter Add To Get The Sum Of Two Polynomials
+Enter Sub To Subtract Two Polynomials
+Enter Mut To Mutiply Two Polynomials
+Enter Div To Divide A from B
+Enter Mod To Mod A from B
+Enter Get To Get Value In A Specified Polynomial
+Enter Other Button To Quit
+What's your choice : 
+Please Input The Polynomials: You Have Inserted A Polynomials : 343x^32 + 1x^23 + 12x^3
+
+Please Input The Polynomials: You Have Inserted A Polynomials : 1x^14 + 32x^2
+
+The Ans of A - B = 343x^32 + 1x^23 + -1x^14 + 12x^3 + -32x^2
+
+Welcome to calculator of polynomials
+Enter Add To Get The Sum Of Two Polynomials
+Enter Sub To Subtract Two Polynomials
+Enter Mut To Mutiply Two Polynomials
+Enter Div To Divide A from B
+Enter Mod To Mod A from B
+Enter Get To Get Value In A Specified Polynomial
+Enter Other Button To Quit
+What's your choice : 
+Please Input The Polynomials: You Have Inserted A Polynomials : 343x^32 + 1x^23 + 12x^3
+
+Please Input The Polynomials: You Have Inserted A Polynomials : 1x^14 + 32x^2
+
+The Ans of A / B = 343x^18 + 1x^9 + -10976x^6
+The Remainder Polynomial = -32x^11 + 351232x^8 + 12x^3
+
+Welcome to calculator of polynomials
+Enter Add To Get The Sum Of Two Polynomials
+Enter Sub To Subtract Two Polynomials
+Enter Mut To Mutiply Two Polynomials
+Enter Div To Divide A from B
+Enter Mod To Mod A from B
+Enter Get To Get Value In A Specified Polynomial
+Enter Other Button To Quit
+What's your choice : 
+Please Input The Polynomials: You Have Inserted A Polynomials : 343x^32 + 1x^23 + 12x^3
+
+Please Input The Polynomials: You Have Inserted A Polynomials : 1x^14 + 32x^2
+
+The Ans of A * B = 343x^46 + 1x^37 + 10976x^34 + 32x^25 + 12x^17 + 384x^5
+
+Welcome to calculator of polynomials
+Enter Add To Get The Sum Of Two Polynomials
+Enter Sub To Subtract Two Polynomials
+Enter Mut To Mutiply Two Polynomials
+Enter Div To Divide A from B
+Enter Mod To Mod A from B
+Enter Get To Get Value In A Specified Polynomial
+Enter Other Button To Quit
+What's your choice : 
+Please Input The Polynoimal That You Want To Caculate
+Please Input The Polynomials: You Have Inserted A Polynomials : 343x^32 + 1x^23 + 12x^3
+
+Please Input The X0 That You Want To Get: The Value Is: 18164
+
+Welcome to calculator of polynomials
+Enter Add To Get The Sum Of Two Polynomials
+Enter Sub To Subtract Two Polynomials
+Enter Mut To Mutiply Two Polynomials
+Enter Div To Divide A from B
+Enter Mod To Mod A from B
+Enter Get To Get Value In A Specified Polynomial
+Enter Other Button To Quit
+What's your choice : 

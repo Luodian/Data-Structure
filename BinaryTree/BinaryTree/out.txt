@@ -1,0 +1,41 @@
+Now we uses two ways to construct tree: 
+
+		       A                                                                                                                        
+
+		           B                                                                                                                    
+
+		         C                                                                                                                      
+
+		          D                                                                                                                     
+
+	Firstly we constructed a tree according full preorder: 
+	A#BC#D###
+
+	Traversal with recursion
+	********************************
+	Preorder Traversal: ABCD
+	Inorder Traversal: ACDB
+	Postorder Traversal: DCBA
+	Levelorder Traversal: ABCD
+
+	Traversal without recursion
+	********************************
+	Preorder Traversal: ABCD
+	Inorder Traversal: ACDB
+	Postorder Traversal: DCBA
+	Then we constructed a tree according full preorder: 
+	ABCDEFGHI###J##
+
+
+	Traversal with recursion
+	********************************
+	Preorder Traversal: ABDHIECFJG
+	Inorder Traversal: HDIBEAFJCG
+	Postorder Traversal: HIDEBJFGCA
+	Levelorder Traversal: ABCDEFGHIJ
+
+	Traversal without recursion
+	********************************
+	Preorder Traversal: ABDHIECFJG
+	Inorder Traversal: HDIBEAFJCG
+	Postorder Traversal: HIDEBJFGCA

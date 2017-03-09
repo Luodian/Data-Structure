@@ -1,0 +1,23 @@
+You have created the threading tree.
+		     A                                                                                                                          
+
+		   B    C                                                                                                                       
+
+		 D  E F  G                                                                                                                      
+
+		H I    J                                                                                                                        
+
+
+Please input node you want to search:In Preorder the node after A is :B
+
+Please input node you want to search:In Inorder the node after B is :E
+
+Please input node you want to search:In Postorder the node after F is :G
+
+Now I will show you three different ways of traversal according to inthreads
+
+First the preorder is: ABDHIECFJG
+
+Second the inorder is: HDIBEAFJCG
+
+Third the postorder is: EBJFGCA

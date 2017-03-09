@@ -1,0 +1,117 @@
+****** Now it's a sample of serial insertion ********
+		   5                                                                                                                            
+
+		 1   8                                                                                                                          
+
+		    7 9                                                                                                                         
+
+
+********* Now it's a sample of removal **********
+
+		       3                                                                                                                        
+
+		   1       7                                                                                                                    
+
+		 0   2   5   8                                                                                                                  
+
+		        4 6   9                                                                                                                 
+
+
+********* After removed 3 the tree is **********
+
+		       4                                                                                                                        
+
+		   1       7                                                                                                                    
+
+		 0   2   5   8                                                                                                                  
+
+		          6   9                                                                                                                 
+
+
+********* After removed 6 the tree is **********
+
+		       4                                                                                                                        
+
+		   1       7                                                                                                                    
+
+		 0   2   5   8                                                                                                                  
+
+		              9                                                                                                                 
+
+
+****** Now it's a sample of single left rotation ********
+****** Aftre inserted the tree is ******
+
+		   3                                                                                                                            
+
+		 2                                                                                                                              
+
+		1                                                                                                                               
+
+
+****** Aftre rotated the tree is *******
+
+		 2                                                                                                                              
+
+		1 3                                                                                                                             
+
+
+****** Now it's a sample of single right rotation ********
+****** Aftre inserted the tree is ******
+
+		   1                                                                                                                            
+
+		     2                                                                                                                          
+
+		      3                                                                                                                         
+
+
+****** Aftre rotated the tree is *******
+
+		 2                                                                                                                              
+
+		1 3                                                                                                                             
+
+
+****** Now it's a sample of double LR rotation ********
+****** Aftre inserted the tree is ******
+
+		       4                                                                                                                        
+
+		   1       8                                                                                                                    
+
+		         5                                                                                                                      
+
+		          6                                                                                                                     
+
+
+****** Aftre rotated the tree is *******
+
+		   4                                                                                                                            
+
+		 1   6                                                                                                                          
+
+		    5 8                                                                                                                         
+
+
+****** Now it's a sample of double RL rotation ********
+****** Aftre inserted the tree is ******
+
+		       6                                                                                                                        
+
+		   2       9                                                                                                                    
+
+		     4                                                                                                                          
+
+		    3                                                                                                                           
+
+
+****** Aftre rotated the tree is *******
+
+		   6                                                                                                                            
+
+		 3   9                                                                                                                          
+
+		2 4                                                                                                                             
+
+
