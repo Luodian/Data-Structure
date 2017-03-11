@@ -1,11 +1,12 @@
 //
-//  main.cpp
+//  SkipList.cpp
 //  SkipList
 //
-//  Created by 李博 on 04/03/2017.
+//  Created by 李博 on 09/03/2017.
 //  Copyright © 2017 李博. All rights reserved.
 //
 
+#include "SkipList.hpp"
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -67,16 +68,27 @@ private:
         default_random_engine generator(seed);
         uniform_int_distribution<int> distribution(0,10);
         auto dice = bind(distribution,generator);
-        int level = 0;
-        for (int i = 0; i < maxlevel; ++i)
+        int level = 1;
+        while(1)
         {
             int num = dice();
-            if (num < 5)
+            if (num % 2)
             {
                 level ++;
             }
+            else
+            {
+                break;
+            }
         }
-        return level;
+        if (level > maxlevel)
+        {
+            return maxlevel;
+        }
+        else
+        {
+            return level;
+        }
     }
     bool empty(const skipNode *header)
     {
@@ -220,7 +232,7 @@ private:
                 }
                 else if (p == nullptr)
                 {
-                   cout<<"- ";
+                    cout<<"- ";
                 }
             }
             cout<<"-> NULL.\n";
@@ -296,102 +308,3 @@ public:
         printList(header);
     }
 };
-
-int GenerateData()
-{
-    unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
-    default_random_engine generator(seed);
-    uniform_int_distribution<int> distribution(1,100000);
-    auto dice = bind(distribution,generator);
-    int ret = dice();
-    return ret;
-}
-
-clock_t SKtest(int n)
-{
-    skipList<int> test;
-    int temp;
-    for (int i = 0; i < n; ++i)
-    {
-        temp = GenerateData();
-        test.insert(temp);
-    }
-    clock_t t = clock();
-    test.find(temp);
-    t = clock() - t;
-    return t;
-}
-
-clock_t ListTest(int n)
-{
-    list<int> test;
-    int temp;
-    for (int i = 0; i < n; ++i)
-    {
-        temp = GenerateData();
-        test.push_back(temp);
-    }
-    temp = GenerateData();
-    list<int> :: iterator itr;
-    clock_t t = clock();
-    for (itr = test.begin(); itr != test.end(); ++itr)
-    {
-        if (*(itr) == temp)
-        {
-            t = clock() - t;
-            return t;
-        }
-    }
-    t = clock() - t;
-    return t;
-}
-
-void TimePerfo()
-{
-    fstream writeFile;
-    writeFile.open("/Users/luodian/Desktop/#1/SkipList/SkipList/SkipList.txt",ios::out | ios::trunc);
-    cout.setf(ios::fixed,ios::floatfield);
-    cout.precision(6);
-    writeFile.setf(ios::fixed,ios::floatfield);
-    writeFile.precision(6);
-    cout<<"\nTime perfomance of skip list in search\n";
-    cout<<"*******************************************\n\n";
-    for (int i = 1; i <= 100; ++i)
-    {
-        clock_t t = SKtest(i * 1000);
-        writeFile<<i * 1000<<" "<<((float) t / (CLOCKS_PER_SEC))<<"\n";
-        cout<<i * 1000<<" "<<((float) t / (CLOCKS_PER_SEC))<<"\n";
-    }
-    fstream writeList;
-    writeList.open("/Users/luodian/Desktop/#1/SkipList/SkipList/List.txt",ios::out | ios::trunc);
-    cout<<"\nTime perfomance of list in search\n";
-    cout<<"*******************************************\n\n";
-    for (int i = 1; i <= 100; ++i)
-    {
-        clock_t t = ListTest(i * 1000);
-        writeList<<i * 1000<<" "<<((float) t / (CLOCKS_PER_SEC))<<"\n";
-        cout<<i * 1000<<" "<<((float) t / (CLOCKS_PER_SEC))<<"\n";
-    }
-}
-
-void SimpleTest()
-{
-    skipList<int> test;
-    for (int i = 1; i <= 9; ++i)
-    {
-        test.insert(i);
-    }
-    test.debug();
-}
-
-int main()
-{
-    //Accelerate IO Stream
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    cout.tie(nullptr);
-    SimpleTest();
-    TimePerfo();
-    return 0;
-}
-

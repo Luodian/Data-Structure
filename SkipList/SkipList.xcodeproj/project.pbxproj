@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F31945A01E72F91D00EF853D /* Kmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F319459E1E72F91D00EF853D /* Kmp.cpp */; };
-		F31945A31E72F9B400EF853D /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31945A11E72F9B400EF853D /* Trie.cpp */; };
-		F31945A61E72F9C000EF853D /* BruteForce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31945A41E72F9C000EF853D /* BruteForce.cpp */; };
-		F3AB0E011E6B1F00001F112B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E001E6B1F00001F112B /* main.cpp */; };
+		F3AB0E3A1E71A054001F112B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E391E71A054001F112B /* main.cpp */; };
+		F3AB0E421E71A079001F112B /* SkipList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E401E71A079001F112B /* SkipList.cpp */; };
+		F3AB0E481E728C42001F112B /* Avl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E461E728C42001F112B /* Avl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F3AB0DFB1E6B1F00001F112B /* CopyFiles */ = {
+		F3AB0E341E71A054001F112B /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -26,18 +25,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F319459E1E72F91D00EF853D /* Kmp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Kmp.cpp; sourceTree = "<group>"; };
-		F319459F1E72F91D00EF853D /* Kmp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Kmp.hpp; sourceTree = "<group>"; };
-		F31945A11E72F9B400EF853D /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
-		F31945A21E72F9B400EF853D /* Trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
-		F31945A41E72F9C000EF853D /* BruteForce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BruteForce.cpp; sourceTree = "<group>"; };
-		F31945A51E72F9C000EF853D /* BruteForce.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BruteForce.hpp; sourceTree = "<group>"; };
-		F3AB0DFD1E6B1F00001F112B /* Kmp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Kmp; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3AB0E001E6B1F00001F112B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F3AB0E361E71A054001F112B /* SkipList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkipList; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3AB0E391E71A054001F112B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F3AB0E401E71A079001F112B /* SkipList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkipList.cpp; sourceTree = "<group>"; };
+		F3AB0E411E71A079001F112B /* SkipList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkipList.hpp; sourceTree = "<group>"; };
+		F3AB0E461E728C42001F112B /* Avl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Avl.cpp; sourceTree = "<group>"; };
+		F3AB0E471E728C42001F112B /* Avl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Avl.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F3AB0DFA1E6B1F00001F112B /* Frameworks */ = {
+		F3AB0E331E71A054001F112B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,105 +44,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F3AB0DF41E6B1F00001F112B = {
+		F3AB0E2D1E71A054001F112B = {
 			isa = PBXGroup;
 			children = (
-				F3AB0DFF1E6B1F00001F112B /* Kmp */,
-				F3AB0DFE1E6B1F00001F112B /* Products */,
+				F3AB0E381E71A054001F112B /* SkipList */,
+				F3AB0E371E71A054001F112B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F3AB0DFE1E6B1F00001F112B /* Products */ = {
+		F3AB0E371E71A054001F112B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F3AB0DFD1E6B1F00001F112B /* Kmp */,
+				F3AB0E361E71A054001F112B /* SkipList */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F3AB0DFF1E6B1F00001F112B /* Kmp */ = {
+		F3AB0E381E71A054001F112B /* SkipList */ = {
 			isa = PBXGroup;
 			children = (
-				F3AB0E001E6B1F00001F112B /* main.cpp */,
-				F319459E1E72F91D00EF853D /* Kmp.cpp */,
-				F319459F1E72F91D00EF853D /* Kmp.hpp */,
-				F31945A11E72F9B400EF853D /* Trie.cpp */,
-				F31945A21E72F9B400EF853D /* Trie.hpp */,
-				F31945A41E72F9C000EF853D /* BruteForce.cpp */,
-				F31945A51E72F9C000EF853D /* BruteForce.hpp */,
+				F3AB0E391E71A054001F112B /* main.cpp */,
+				F3AB0E401E71A079001F112B /* SkipList.cpp */,
+				F3AB0E461E728C42001F112B /* Avl.cpp */,
+				F3AB0E471E728C42001F112B /* Avl.hpp */,
+				F3AB0E411E71A079001F112B /* SkipList.hpp */,
 			);
-			path = Kmp;
+			path = SkipList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F3AB0DFC1E6B1F00001F112B /* Kmp */ = {
+		F3AB0E351E71A054001F112B /* SkipList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3AB0E041E6B1F00001F112B /* Build configuration list for PBXNativeTarget "Kmp" */;
+			buildConfigurationList = F3AB0E3D1E71A054001F112B /* Build configuration list for PBXNativeTarget "SkipList" */;
 			buildPhases = (
-				F3AB0DF91E6B1F00001F112B /* Sources */,
-				F3AB0DFA1E6B1F00001F112B /* Frameworks */,
-				F3AB0DFB1E6B1F00001F112B /* CopyFiles */,
+				F3AB0E321E71A054001F112B /* Sources */,
+				F3AB0E331E71A054001F112B /* Frameworks */,
+				F3AB0E341E71A054001F112B /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Kmp;
-			productName = Kmp;
-			productReference = F3AB0DFD1E6B1F00001F112B /* Kmp */;
+			name = SkipList;
+			productName = SkipList;
+			productReference = F3AB0E361E71A054001F112B /* SkipList */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F3AB0DF51E6B1F00001F112B /* Project object */ = {
+		F3AB0E2E1E71A054001F112B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "李博";
 				TargetAttributes = {
-					F3AB0DFC1E6B1F00001F112B = {
+					F3AB0E351E71A054001F112B = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = F293UH4UUA;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = F3AB0DF81E6B1F00001F112B /* Build configuration list for PBXProject "Kmp" */;
+			buildConfigurationList = F3AB0E311E71A054001F112B /* Build configuration list for PBXProject "SkipList" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = F3AB0DF41E6B1F00001F112B;
-			productRefGroup = F3AB0DFE1E6B1F00001F112B /* Products */;
+			mainGroup = F3AB0E2D1E71A054001F112B;
+			productRefGroup = F3AB0E371E71A054001F112B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F3AB0DFC1E6B1F00001F112B /* Kmp */,
+				F3AB0E351E71A054001F112B /* SkipList */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F3AB0DF91E6B1F00001F112B /* Sources */ = {
+		F3AB0E321E71A054001F112B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31945A61E72F9C000EF853D /* BruteForce.cpp in Sources */,
-				F31945A31E72F9B400EF853D /* Trie.cpp in Sources */,
-				F31945A01E72F91D00EF853D /* Kmp.cpp in Sources */,
-				F3AB0E011E6B1F00001F112B /* main.cpp in Sources */,
+				F3AB0E481E728C42001F112B /* Avl.cpp in Sources */,
+				F3AB0E421E71A079001F112B /* SkipList.cpp in Sources */,
+				F3AB0E3A1E71A054001F112B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F3AB0E021E6B1F00001F112B /* Debug */ = {
+		F3AB0E3B1E71A054001F112B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -192,7 +186,7 @@
 			};
 			name = Debug;
 		};
-		F3AB0E031E6B1F00001F112B /* Release */ = {
+		F3AB0E3C1E71A054001F112B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -232,7 +226,7 @@
 			};
 			name = Release;
 		};
-		F3AB0E051E6B1F00001F112B /* Debug */ = {
+		F3AB0E3E1E71A054001F112B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F293UH4UUA;
@@ -240,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		F3AB0E061E6B1F00001F112B /* Release */ = {
+		F3AB0E3F1E71A054001F112B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F293UH4UUA;
@@ -251,25 +245,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F3AB0DF81E6B1F00001F112B /* Build configuration list for PBXProject "Kmp" */ = {
+		F3AB0E311E71A054001F112B /* Build configuration list for PBXProject "SkipList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3AB0E021E6B1F00001F112B /* Debug */,
-				F3AB0E031E6B1F00001F112B /* Release */,
+				F3AB0E3B1E71A054001F112B /* Debug */,
+				F3AB0E3C1E71A054001F112B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3AB0E041E6B1F00001F112B /* Build configuration list for PBXNativeTarget "Kmp" */ = {
+		F3AB0E3D1E71A054001F112B /* Build configuration list for PBXNativeTarget "SkipList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F3AB0E051E6B1F00001F112B /* Debug */,
-				F3AB0E061E6B1F00001F112B /* Release */,
+				F3AB0E3E1E71A054001F112B /* Debug */,
+				F3AB0E3F1E71A054001F112B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F3AB0DF51E6B1F00001F112B /* Project object */;
+	rootObject = F3AB0E2E1E71A054001F112B /* Project object */;
 }
