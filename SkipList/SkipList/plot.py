@@ -38,7 +38,7 @@ def plotGraph():
     readFile("/Users/luodian/Desktop/DSA/SkipList/SkipList/List.txt",words,times)
     yMin = min(min(times),yMin)
     yMax = max(max(times),yMax)
-    plt.subplot(312)
+    plt.subplot(313)
     plt.plot(words, times, color='g', label='Time of List')
     plt.xlabel = "Scale(n)"
     plt.ylabel = "Times(s)"
@@ -50,7 +50,7 @@ def plotGraph():
     readFile("/Users/luodian/Desktop/DSA/SkipList/SkipList/Avl.txt",words,times)
     yMin = min(min(times),yMin)
     yMax = max(max(times),yMax)
-    plt.subplot(313)
+    plt.subplot(312)
     plt.plot(words,times, color = 'r', label = 'Time of Avl')
 
     plt.xlabel = "Scale(n)"

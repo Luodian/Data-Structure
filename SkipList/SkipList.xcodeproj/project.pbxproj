@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F3AB0E3A1E71A054001F112B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E391E71A054001F112B /* main.cpp */; };
-		F3AB0E421E71A079001F112B /* SkipList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E401E71A079001F112B /* SkipList.cpp */; };
-		F3AB0E481E728C42001F112B /* Avl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E461E728C42001F112B /* Avl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,9 +25,7 @@
 /* Begin PBXFileReference section */
 		F3AB0E361E71A054001F112B /* SkipList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkipList; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AB0E391E71A054001F112B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		F3AB0E401E71A079001F112B /* SkipList.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkipList.cpp; sourceTree = "<group>"; };
 		F3AB0E411E71A079001F112B /* SkipList.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SkipList.hpp; sourceTree = "<group>"; };
-		F3AB0E461E728C42001F112B /* Avl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Avl.cpp; sourceTree = "<group>"; };
 		F3AB0E471E728C42001F112B /* Avl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Avl.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				F3AB0E391E71A054001F112B /* main.cpp */,
-				F3AB0E401E71A079001F112B /* SkipList.cpp */,
-				F3AB0E461E728C42001F112B /* Avl.cpp */,
 				F3AB0E471E728C42001F112B /* Avl.hpp */,
 				F3AB0E411E71A079001F112B /* SkipList.hpp */,
 			);
@@ -130,8 +124,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3AB0E481E728C42001F112B /* Avl.cpp in Sources */,
-				F3AB0E421E71A079001F112B /* SkipList.cpp in Sources */,
 				F3AB0E3A1E71A054001F112B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +253,7 @@
 				F3AB0E3F1E71A054001F112B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

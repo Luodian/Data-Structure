@@ -9,14 +9,40 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kmp/Kmp.cpp"
-            timestampString = "510851434.657026"
+            filePath = "Kmp/BFsuffix.hpp"
+            timestampString = "510975674.060713"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kmp/BFsuffix.hpp"
+            timestampString = "510975674.578271"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kmp/BFsuffix.hpp"
+            timestampString = "510975675.15062"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "kmp(const std::string &amp;Template,const std::string &amp;Pattern, std::vector&lt;int&gt; &amp;PatchTable)"
-            landmarkType = "9">
+            endingLineNumber = "63">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

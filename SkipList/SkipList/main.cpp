@@ -7,8 +7,8 @@
 //
 #include <iostream>
 #include <fstream>
-#include "SkipList.cpp"
-#include "Avl.cpp"
+#include "SkipList.hpp"
+#include "Avl.hpp"
 
 using namespace std;
 
@@ -179,6 +179,7 @@ void TimePerfo()
     }
 
     writeFile.close();
+    
     writeFile.open("Avl.txt",ios::out | ios::trunc);
     cout<<"\nTime perfomance of Avltree's insert\n";
     cout<<"*******************************************\n\n";

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F31945A01E72F91D00EF853D /* Kmp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F319459E1E72F91D00EF853D /* Kmp.cpp */; };
-		F31945A31E72F9B400EF853D /* Trie.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31945A11E72F9B400EF853D /* Trie.cpp */; };
-		F31945A61E72F9C000EF853D /* BruteForce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31945A41E72F9C000EF853D /* BruteForce.cpp */; };
 		F3AB0E011E6B1F00001F112B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3AB0E001E6B1F00001F112B /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -26,12 +23,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F319459E1E72F91D00EF853D /* Kmp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Kmp.cpp; sourceTree = "<group>"; };
 		F319459F1E72F91D00EF853D /* Kmp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Kmp.hpp; sourceTree = "<group>"; };
-		F31945A11E72F9B400EF853D /* Trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Trie.cpp; sourceTree = "<group>"; };
 		F31945A21E72F9B400EF853D /* Trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
-		F31945A41E72F9C000EF853D /* BruteForce.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BruteForce.cpp; sourceTree = "<group>"; };
-		F31945A51E72F9C000EF853D /* BruteForce.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BruteForce.hpp; sourceTree = "<group>"; };
+		F31945A51E72F9C000EF853D /* BFsuffix.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BFsuffix.hpp; sourceTree = "<group>"; };
+		F31945DD1E74265400EF853D /* BoyerMoore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BoyerMoore.hpp; sourceTree = "<group>"; };
+		F31945DF1E74298900EF853D /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
 		F3AB0DFD1E6B1F00001F112B /* Kmp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Kmp; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AB0E001E6B1F00001F112B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,12 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				F3AB0E001E6B1F00001F112B /* main.cpp */,
-				F319459E1E72F91D00EF853D /* Kmp.cpp */,
+				F31945DF1E74298900EF853D /* Header.hpp */,
+				F31945DD1E74265400EF853D /* BoyerMoore.hpp */,
 				F319459F1E72F91D00EF853D /* Kmp.hpp */,
-				F31945A11E72F9B400EF853D /* Trie.cpp */,
 				F31945A21E72F9B400EF853D /* Trie.hpp */,
-				F31945A41E72F9C000EF853D /* BruteForce.cpp */,
-				F31945A51E72F9C000EF853D /* BruteForce.hpp */,
+				F31945A51E72F9C000EF853D /* BFsuffix.hpp */,
 			);
 			path = Kmp;
 			sourceTree = "<group>";
@@ -135,9 +130,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31945A61E72F9C000EF853D /* BruteForce.cpp in Sources */,
-				F31945A31E72F9B400EF853D /* Trie.cpp in Sources */,
-				F31945A01E72F91D00EF853D /* Kmp.cpp in Sources */,
 				F3AB0E011E6B1F00001F112B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
