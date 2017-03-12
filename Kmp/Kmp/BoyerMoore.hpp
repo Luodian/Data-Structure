@@ -29,7 +29,7 @@ void PreBc(std::vector<int> &BadChar,const std::string &Pattern)
 
 void Presuffix(const std::string &Pattern, std::vector<int> &suffix)
 {
-    int m = Pattern.size();
+    size_t m = Pattern.size();
     suffix.resize(m);
     int q;
     suffix[m-1] = m;
@@ -48,7 +48,7 @@ void PreGs(const std::string &Pattern,std::vector<int> &Goodsuffix)
 {
     std::vector<int> suffixTable;
     Presuffix(Pattern,suffixTable);
-    int m = Pattern.size();
+    size_t m = Pattern.size();
     Goodsuffix.resize(m);
     for (int i = 0; i < m; ++i)
     {

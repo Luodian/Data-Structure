@@ -45,7 +45,12 @@ void TestPerfo(std::string &Template,std::string &Pattern,bool IOallowed = 0)
     std::cout<<"\n\n**********************************************\n";
     std::cout<<"           Length of Template : "<<Template.size()<<"\n";
     std::cout<<"           Length of Pattern : "<<Pattern.size()<<"\n";
-    std::cout<<"           Pattern :"<<Pattern<<"\n";
+    std::cout<<"           Pattern :";
+    for (int i = 0; i < 10; ++i)
+    {
+        std::cout<<Pattern[i];
+    }
+    std::cout<<"\n";
     std::cout<<"**********************************************\n\n";
     std::cout<<"Validating Test: \n";
 
@@ -184,7 +189,19 @@ int main()
 
     TestPerfo(Template,Pattern);
 
-    Template = "Here is a simple sample";
-    Pattern = "sample";
+    Template.clear();
+    for (int i = 0; i < 100000; ++i)
+    {
+        Template.push_back('A');
+    }
+    Template.push_back('B');
+    Pattern.clear();
+    for (int i = 0; i < 1000; ++i)
+    {
+        Pattern.push_back('A');
+    }
+    Pattern.push_back('B');
     TestPerfo(Template,Pattern);
+
+
 }

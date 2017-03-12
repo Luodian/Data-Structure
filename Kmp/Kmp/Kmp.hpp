@@ -23,7 +23,7 @@ void makePatchTable(const std::string &pattern,std::vector<int> &PatchTable)
     {
         while(k > 0 && pattern[i] != pattern[k])
         {
-            k = pattern[k-1];
+            k = PatchTable[k-1];
         }
         if (pattern[i] == pattern[k])
         {
