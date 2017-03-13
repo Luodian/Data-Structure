@@ -141,3 +141,12 @@ void makePatchTable(const std::string &pattern,std::vector<int> &PatchTable)
 
 
 
+### 他山之石：Reference
+
+1. 阮一峰 (2013). "*字符串匹配的KMP算法*". Retrieved on 10th March, 2017 from:
+
+   http://www.ruanyifeng.com/blog/2013/05/
+
+   ​
+
+   ​

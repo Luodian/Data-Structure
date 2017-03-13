@@ -38,9 +38,17 @@
 
   ![图片 4](http://p1.bqimg.com/567571/b4ef322c59676142.png)
 
-  通过随机化的高度，我们将这个图分成了几个大组，[3, 6], [6, 25], [25, 26]。而其中每个大组由下分几个小组，我们在查找的过程中首先根据从大组向小组，一步一步的确定搜索的最终位置，而这个过程怎么去计算时间消耗呢？
+  通过随机化的高度，我们将这个图分成了几个大组，[3, 6], [6, 25], [25, 26]。而其中每个大组由下分几个小组，我们在查找的过程中首先根据从大组向小组，一步一步的确定搜索的最终位置，
 
-  ​
+  这里借用在数据结构与算法（Mark Allen）中的描述。
+
+  > 这是因为查找由向前到一个新的结点或者在同一个结点下降到低一级的链组成，在一次查找期间每一步总的期望时间消耗最多为 $O(\log_2{N})$.
+
+  或许这么说有一些空洞，但因为随机化结构不太方便举例分析，这里列出一种在跳跃表上的升级结构，确定性跳跃表（Determinastic Skip List），在其作者的论文中，这张图片形象的解释了 DSL 比起一般的 SL 效率更高的原因（DSL 的查找效率应该为 $\Theta(\log_2{N})$ ），也从一个侧面去解释了 SL 的效率**期望**为$O(\log_2{N})$ 的原因。
+
+  [Determinastic Skip List](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.399.6035&rep=rep1&type=pdf)
+
+  ![图片](http://p1.bqimg.com/567571/5429303268a3bc21.png)
 
 ### 实现与测试
 
@@ -102,3 +110,17 @@
 
 1. 本次实验首次使用py与cpp混合编译的方式遇到了很多的坑，最后还是放弃了，采用手动使用一个.txt文件作为中间件传送数据的方式。
 2. 理论上跳跃表（Skip List）的时间效率应该会高过平衡二叉树（Avl Tree），但是两周都是自己实现的，在写代码的过程中我也觉得 Skip List 确实应该快一些，但是最终测试的结果是 Avl 胜出，看来上学期才是写代码的巅峰，刚开学手感略显生疏？2333333
+3. 由于时间原因，感觉 DSL 插入结点导致分裂的地方稍微有一点困难，还没有完整的实现 DSL.hpp，但是这种结构听说比红黑树还更暴力，很有必要掌握呀！
+
+
+
+### 他山之石：Reference
+
+1. Pugh, W. (1990). "*Skip lists: A probabilistic alternative to balanced trees*". Communications of the ACM.     		   33 (6): 668. doi:10.1145/78973.78977
+
+
+2. DSQiu (2014). "*[Skip List（跳跃表）原理详解与实现 ](http://dsqiu.iteye.com/blog/1705530)* ". Retrieved on 6th March, 2017 from:
+
+   http://dsqiu.iteye.com/blog/1705530
+
+3. J. Ian Munro, Thomas Papadakis and Robert Sedgewick. (1992). "Deterministic Skip Lists". Society for Industrial and Applied Mathematics Philadelphia, PA, USA. 367-375. doi:10.1.1.399.6035​​
