@@ -40,7 +40,7 @@ private:
         LeftistNode *left;
         LeftistNode *right;
         int npl;
-        LeftistNode(const Comparable & theElement, LeftistNode *lt = nullptr,LeftistNode *rt = nullptr,int np = 0)
+        LeftistNode(const Comparable & theElement = Comparable(), LeftistNode *lt = nullptr,LeftistNode *rt = nullptr,int np = 0)
         : element(theElement),left(lt),right(rt),npl(np)
         {};
     };
@@ -83,7 +83,8 @@ private:
     }
     void insert(LeftistNode * &root,const Comparable &x)
     {
-        LeftistNode single = new LeftistNode(x);
+        LeftistNode *single = nullptr;
+        single = new LeftistNode(x);
         root = merge(root,single);
     }
     void swapChildren(LeftistNode * &t)

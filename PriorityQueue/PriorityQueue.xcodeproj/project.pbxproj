@@ -23,6 +23,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F348A2FC1E76C41B00E18632 /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
+		F348A2FD1E76C42C00E18632 /* LeftistHeap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = LeftistHeap.hpp; sourceTree = "<group>"; };
+		F348A2FE1E76C43600E18632 /* Heap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Heap.hpp; sourceTree = "<group>"; };
 		F3AB0E101E6BECCB001F112B /* PriorityQueue */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PriorityQueue; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3AB0E131E6BECCB001F112B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				F3AB0E131E6BECCB001F112B /* main.cpp */,
+				F348A2FC1E76C41B00E18632 /* Header.hpp */,
+				F348A2FD1E76C42C00E18632 /* LeftistHeap.hpp */,
+				F348A2FE1E76C43600E18632 /* Heap.hpp */,
 			);
 			path = PriorityQueue;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				F3AB0E191E6BECCB001F112B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -86,7 +86,7 @@ void makePatchTable(const std::string &pattern,std::vector<int> &PatchTable)
 
 
 
-### 测试与应用场景分析
+### 测试与效率分析
 
 #### 测试
 
@@ -138,6 +138,59 @@ void makePatchTable(const std::string &pattern,std::vector<int> &PatchTable)
 虽然文本文件系统大量使用BM算法作为模式匹配的首选方法，但KMP也是蜜汁出名，我想可能是因为KMP算法的时间复杂度算是线性最优，因此即使相较于BF算法大多数情况下都不占优势，但是它最坏$O(N+M)$的特点，也可以让它成为一个很棒的模式匹配的方法。
 
 但或许更重要的，是KMP中，求解 next 数组的那种思路，正如文章开头时的那个科赫曲线一般，从自身去导出自身，利用 next[k-1] 的信息，去生成next[k]的值，尽可能的减少匹配的次数。而后又将这种思想去应用在对于P串的匹配上，这是思维的一个闪光点，也是算法历史上的一道难得的光芒。
+
+
+
+### 学以致用：Application
+
+可以使用 next 数组的性质去完成一些很有趣的竞赛题目，这是一道我曾经看到过的竞赛题，当时还不太理解 next 数组所以就放弃了，现在我又去做的时候，由于完成了 KMP 算法，这道题就显得游刃有余了。
+
+这是在利用 next 数组的一个性质，我们利用 next[i] 表示截止 i 位置时，出现的最大的前后缀重合长度，对于ABCAB，它的next值为2，所以我们可以得知，截止( i 从 0 开始 ) i = 4时，前缀A可以找到一次重合，前缀AB也可以找到一次重合，因此其Sum = 2，恰好和 next 数组值相等。 
+
+HDU-3336
+
+http://acm.hdu.edu.cn/showproblem.php?pid=3336
+
+
+
+![pic](http://i1.piimg.com/567571/97874fba153117e5.png)
+
+
+
+AC代码：
+
+```cpp
+int main()
+{
+	#ifndef ONLINE_JUDGE
+		freopen("/Users/luodian/Desktop/in.txt","r",stdin);
+	#endif
+	ios::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+	int T;
+	cin>>T;
+	while(T--)
+	{
+		int len;
+		cin>>len;
+		cin>>P;
+		mem(nextValue,0);
+		makeNext();
+		long long ans = 0;
+		ans = (P.size() + nextValue[P.size() - 1]);
+		for (int i = 1; i < P.size() - 1; ++i)
+		{
+			if (nextValue[i] != 0 && nextValue[i] != (nextValue[i + 1] - 1))
+			{
+				ans += nextValue[i];
+			}
+		}
+		cout<<ans % MOD<<endl;
+	}
+	return 0;
+}
+```
 
 
 

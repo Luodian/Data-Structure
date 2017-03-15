@@ -11,5 +11,8 @@
 int main()
 {
     LeftistHeap<int> A;
-    A.insert(4);
+    for (int i = 1; i <= 10; ++i)
+    {
+        A.insert(i);
+    }
 }
