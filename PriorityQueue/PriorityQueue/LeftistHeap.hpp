@@ -28,6 +28,10 @@ private:
         {};
     };
     LeftistNode *root;
+
+    //对于左式堆的合并，首先比较两个堆的头结点
+    //将元素较小的结点与较大的结点的右子树进行合并
+    //并且递归的执行merge函数，递归出口为有一者为单结点时结束。
     LeftistNode * merge (LeftistNode * h1, LeftistNode * h2)
     {
         if (h1 == nullptr)
@@ -47,6 +51,10 @@ private:
             return merge1(h2,h1);
         }
     }
+    //在递归的出口的最后，此时肯定是满足堆序性质的，但是不一定满足左式堆性质
+    //若右子树的零路径长大于左子树，因此我们需要交换其左右子树
+    //头结点的零路径长会被更新为两者中的较小值+1，此时显然
+    //右子树的零路径长最小，因此我们执行这样的更新。
     LeftistNode * merge1 (LeftistNode * h1, LeftistNode *h2)
     {
         if (h1->left == nullptr) //single node
@@ -64,6 +72,10 @@ private:
         }
         return h1;
     }
+
+    //插入是合并的一个特殊的例程
+    //相当于当前树与一个单结点进行合并。
+    //
     void insert(LeftistNode * &root,const Comparable &x)
     {
         LeftistNode *single = nullptr;

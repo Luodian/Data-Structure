@@ -518,7 +518,6 @@ int main()
     my.InTraversal();
     cout<<"\nThird the postorder is: ";
     my.PostTraversal();
-
     // my.UseThreadCaculatePreorder();
 }
 // pre:ABDHIECFJG

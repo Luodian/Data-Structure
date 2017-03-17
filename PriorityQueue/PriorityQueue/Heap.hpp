@@ -26,6 +26,8 @@ public:
         array.clear();
         array.resize(capacity);
     }
+
+    //根据vector<object>数组进行建堆
     explicit BinaryHeap(const vector<object> &items)
     {
         array.clear();
@@ -37,6 +39,8 @@ public:
         }
         buildHeap();
     }
+    //currentSize是一个private变量，外部不能调用
+    //外部通过empty()函数判断树是否为空
     bool empty() const
     {
         if (currentSize == 0)
@@ -49,6 +53,8 @@ public:
         }
     }
     // const object & finMin() const;
+    
+    //插入元素x到最后一个结点，然后依次实现上滤的过程
     void insert(const object & x)
     {
         if (currentSize > maxSize)
@@ -67,6 +73,8 @@ public:
         }
         array[hole] = x;
     }
+
+    //出队头结点，将最后一个元素放到头结点，执行下滤的操作。
     void pop_front()
     {
         if (empty())
@@ -77,6 +85,8 @@ public:
         array[1] = array[currentSize --];
         PercolateDown(1);
     }
+
+    //返回头结点，最大堆或者是最小堆
     object front()
     {
         object minItem;
@@ -88,6 +98,8 @@ public:
         minItem = array[1];
         return minItem;
     }
+
+    //对除叶节点之外的元素执行下滤操作，时间复杂度为O(N);
     void bulidHeap(const vector<object> &items)
     {
         array.resize(items.size() + 10);
@@ -103,6 +115,8 @@ public:
     {
         return currentSize;
     }
+
+    //为了topK算法写的一个弹出最大堆中最小元素的，很非主流的方法。
     void pop_max()
     {
         int maxElement = -INF;

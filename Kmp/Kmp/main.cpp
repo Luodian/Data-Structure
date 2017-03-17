@@ -10,6 +10,9 @@
 #include "BoyerMoore.hpp"
 #include "BFsuffix.hpp"
 
+
+//对比测试几种字符串匹配算法的时间效率
+//具体规则可以参看docs
 void TestPerfo(std::string &Template,std::string &Pattern,bool IOallowed = 0)
 {
 	// inital IO stream

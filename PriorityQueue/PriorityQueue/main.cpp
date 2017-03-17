@@ -13,6 +13,9 @@ using namespace std;
 
 vector<int> datasheet;
 
+//datasheet用于存放数据
+//不然每次生成都会很费时间。
+
 int RandomNum(int n)
 {
     unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
@@ -24,6 +27,7 @@ int RandomNum(int n)
     return ret;
 }
 
+//从data.txt中读入数据，然后写入datasheet中
 void GenerateData()
 {
     fstream readFile;
@@ -36,6 +40,7 @@ void GenerateData()
     }
 }
 
+//对Heap的insert的时间效率进行单元测试
 clock_t UT_Heap_time_insert(int n)
 {
     BinaryHeap<int> A;
@@ -48,6 +53,7 @@ clock_t UT_Heap_time_insert(int n)
     return t;
 }
 
+//对左式堆的insert的时间效率进行单元测试
 clock_t UT_LHeap_time_insert(int n)
 {
     LeftistHeap<int> A;
@@ -60,6 +66,7 @@ clock_t UT_LHeap_time_insert(int n)
     return t;
 }   
 
+//简单的测试heap是否能够正确运行。
 void UT_Heap_Valid()
 {
     vector<int> Init_vec;
@@ -93,6 +100,7 @@ void UT_Heap_Valid()
     cout<<"\n\n";
 }
 
+//对左式堆的运行效率进行简单的验证。
 void UT_LHeap_Valid()
 {
     cout<<"\n Validation of LeftistHeap\n";
@@ -116,8 +124,10 @@ void UT_LHeap_Valid()
     cout<<"\n\n";
 }
 
+//对左式堆和普通堆的时间效率进行对比测试
 void InsertPerfo()
 {
+    //定义输入流以及格式
     fstream writeFile;
     cout.setf(ios::fixed,ios::floatfield);
     cout.precision(6);
@@ -152,8 +162,10 @@ void InsertPerfo()
     writeFile.close();
 }
 
+//对两者的合并效率进行对比测试
 void CombinationPerfo()
 {
+    //设置IO流格式
     cout.setf(ios::fixed,ios::floatfield);
     cout.precision(6);
 
@@ -188,6 +200,8 @@ void CombinationPerfo()
     cout<<"LeftistHeap's merge time   |   "<<(float)(LH_t) / (CLOCKS_PER_SEC)<<" s\n";
 }
 
+
+//左式堆Merge的应用，将两个文件合并成一个文件。
 void MergeApp(int n)
 {
     fstream writeFile;
@@ -251,6 +265,13 @@ void MergeApp(int n)
     cout<<"Used time = "<<t<<"s.\n\n";
 }
 
+//Top K算法的应用，从100000000个数据中选出前10小的数据。
+//应用两种算法
+//1.直接堆排序
+//2.维护一个K规模的最大堆，此时头结点为堆中最大元素，也是第10小的元素，设它为S10，将所有数据依次入堆。
+//如果数据比S10更大，则O（1）被遗弃
+//如果数据比S10更小，则O(logk）维护其有序性。
+//具体分析见docs
 void TopK(int n)
 {
     cout<<"Find Top 10 elements in 100000000 elements\n";

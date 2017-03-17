@@ -123,6 +123,7 @@ clock_t List_insert(int n)
     return t;
 }
 
+//单元测试Avl的insert效率
 clock_t Avl_insert(int n)
 {
     AvlTree test;
@@ -139,7 +140,6 @@ clock_t Avl_insert(int n)
     t = clock() - t;
     return t;
 }
-
 
 void TimePerfo()
 {

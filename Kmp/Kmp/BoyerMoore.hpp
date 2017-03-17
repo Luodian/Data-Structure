@@ -13,6 +13,7 @@
 
 constexpr static int sigma_size = 256;
 
+//预先计算坏字符规则数组
 void PreBc(std::vector<int> &BadChar,const std::string &Pattern)
 {
     int m = (int)Pattern.size();
@@ -27,6 +28,7 @@ void PreBc(std::vector<int> &BadChar,const std::string &Pattern)
     }
 }
 
+//类似于Kmp的思路，计算后缀匹配表
 void Presuffix(const std::string &Pattern, std::vector<int> &suffix)
 {
     size_t m = Pattern.size();
@@ -44,6 +46,7 @@ void Presuffix(const std::string &Pattern, std::vector<int> &suffix)
     }
 }
 
+//预先计算好后缀规则数组
 void PreGs(const std::string &Pattern,std::vector<int> &Goodsuffix)
 {
     std::vector<int> suffixTable;
