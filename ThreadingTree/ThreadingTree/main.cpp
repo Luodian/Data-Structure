@@ -45,9 +45,11 @@ private:
         root = nullptr;
         temp = nullptr;
     }
+
     ThreadingNode *temp;
     ThreadingNode *head;
     ThreadingNode *root;
+
     int TreeHeight;
     int h_x;
     char TreeBuffer[10][200];
@@ -72,7 +74,6 @@ private:
     {
         if (p != nullptr)
         {
-            ThreadingInTree(p->left);
             p->Ltag = (p->left) ? Link : Thread;
             p->Rtag = (p->right) ? Link : Thread;
             if (prev != nullptr)
@@ -87,6 +88,8 @@ private:
                 }
             }
             prev = p;
+            
+            ThreadingInTree(p->left);
             ThreadingInTree(p->right);
         }
     }
