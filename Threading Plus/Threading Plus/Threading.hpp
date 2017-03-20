@@ -137,41 +137,43 @@ private:
     
     void PostOrder(ThreadingNode * root)
     {
-        ThreadingNode *p = root;
-        prev = nullptr;
-        while(p != nullptr)
+        if (root != nullptr)
         {
-            while (p->left != prev && p->Ltag == Link)
+            ThreadingNode *p = root;
+            prev = nullptr;
+            while(p != nullptr)
             {
-                p = p->left;
-            }
-
-            while (p != nullptr && p->Rtag == Thread)
-            {
-                cout<<p->element<<" ";
-                p = p->right;
-                prev = p;
-            }
-
-            //此时有可能为只有左子树 故此种情况
-            if (p == root)
-            {
-                cout<<p->element<<" ";
-                return;
-            } 
-
-            while (p != nullptr && p->right != prev)
-            {
-                cout<<p->element<<" ";
-                prev = p;
-                p = p->parent;
-            }
-
-            if (p && p->Rtag == Link)
-            {
-                p = p->right;
+                while(p->left != prev && p->Ltag == Link)
+                {
+                    p = p->left;
+                }
+                while (p != nullptr && p->Rtag == Thread)
+                {
+                    cout<<p->element<<" ";
+                    prev = p;
+                    p = p->right;
+                }
+                //此时有可能为只有左子树 故此种情况
+                if (p == root)
+                {
+                    cout<<p->element<<" ";
+                    return;
+                }
+                
+                while (p != nullptr && p->right == prev)
+                {
+                    cout<<p->element<<" ";
+                    prev = p;
+                    p = p->parent;
+                }
+                
+                if (p != nullptr && p->Rtag == Link)
+                {
+                    p = p->right;
+                }
             }
         }
+        cout<<"\n";
     }
     void makeEmpty(ThreadingNode * &t)
     {
@@ -291,15 +293,15 @@ public:
     void ThreadingPostTree(const string &order)
     {
         CreateThreading(order,0,root,root->parent);
-        head = new ThreadingNode;
-        head->element = '*';
-        prev = head;
         ThreadingPostTree(root);
-        
     }
     void PreOrder()
     {
         PreOrder(head);
+    }
+    void PostOrder()
+    {
+        PostOrder(root);
     }
     void Display()
     {

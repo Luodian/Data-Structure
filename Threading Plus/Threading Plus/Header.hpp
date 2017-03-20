@@ -15,5 +15,6 @@
 #include <algorithm>
 #include <stack>
 #include <queue>
+#include <cmath>
 
 #endif /* Header_h */

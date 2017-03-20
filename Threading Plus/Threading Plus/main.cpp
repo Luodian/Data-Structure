@@ -14,6 +14,7 @@ int main(int argc, const char * argv[])
     string order = "ABDH##I##E##CF#J##G##";
     // my.CreateThreading(order);
     my.ThreadingPostTree(order);
-    
+    my.PostOrder();
+    my.Display();
     return 0;
 }
