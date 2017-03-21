@@ -63,11 +63,23 @@ private:
     int TreeNum;
     vector<TreeNode<T> *>  TreeRoots;
 public:
+    TreeNode<T> * operator [] (const int &choice) const
+    {
+        if (choice < TreeRoots.size())
+        {
+            return TreeRoots[choice];
+        }
+        else
+        {
+            return nullptr;
+        }
+    }
     Forest()
     {
         TreeRoots.clear();
         TreeNum = 0;
     }
+    
 };
 
 template<typename T>
@@ -81,10 +93,58 @@ private:
     {
         root = new TreeNode<T>(theElement);
     }
+    void toBinaryTree(TreeNode<T> *&Troot,BinaryNode<T> *&Broot)
+    {
+        if (Troot == nullptr)
+        {
+            return;
+        }
+        if (Broot == nullptr)
+        {
+            Broot = new BinaryNode<T>;
+        }
+        Broot->element = Troot->element;
+        if(Troot->childs.size() != 0 && Troot->childs[0] != nullptr)
+        {
+            toBinaryTree(Troot->childs[0],Broot->left);
+        }
+        BinaryNode<T> *oldestBrother = Broot->left;
+        for (int i = 1; i < Troot->childs.size(); ++i)
+        {   
+            toBinaryTree(Troot->childs[i],oldestBrother->right);
+            oldestBrother = oldestBrother->right;
+        }
+    }
+    //将q树拷贝给p树
+    TreeNode<T> * Treecpy(TreeNode<T> *q)
+    {
+        if (q == nullptr)
+        {
+            return nullptr;
+        }
+        TreeNode<T> *cur = new TreeNode<T>(q->element);
+        cur->childs.resize(q->childs.size());
+        for (int i = 0; i < q->childs.size(); ++i)
+        {
+            cur->childs[i] = Treecpy(q->childs[i]);
+        }
+        return cur;
+    }
 public:
     Tree(const T &theElement = '*')
     {
         init(theElement);
+    }
+    //通过forest来定义Tree()
+    Tree(TreeNode<T> *Troot)
+    {
+        root = new TreeNode<T>;
+        root = Treecpy(Troot);
+    }
+    void toBinaryTree(BinaryTree<T> &t)
+    {
+        BinaryNode<T> *Broot = t.root;
+        toBinaryTree(root,Broot);
     }
 };
 
@@ -197,8 +257,7 @@ private:
         BinaryNode<T> *pCurRoot = Broot->left;
 
         //选取最左儿子，长子作为当前的根节点。
-        
-        
+
         if(pCurRoot != nullptr)
         {
             Troot->childs.push_back(new TreeNode<T>(pCurRoot->element));
@@ -274,7 +333,6 @@ public:
     {
         toForest(root,ret);
     }
-
 };
 
 
