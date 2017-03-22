@@ -44,10 +44,8 @@ int main(int argc, const char * argv[])
 	BinaryTree<char> first(order);
 	Forest<char> last;
 	first.toForest(last);
-    Tree<char> A(last[2]);
-    
-    BinaryTree<char> C;
-    A.toBinaryTree(C);
+    vector<BinaryTree<char>> Btrees;
+    last.toBinaryTree(Btrees);
     cout << "Hello, World!\n";
     return 0;
 }

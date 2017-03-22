@@ -62,6 +62,17 @@ class Forest
 private:
     int TreeNum;
     vector<TreeNode<T> *>  TreeRoots;
+    
+    //将森林转化成二叉树，通过调用森林中每个树节点的toBinaryTree()例程完成。
+//    void toBinaryTree(vector<BinaryNode<T> *> BinRootArray)
+//    {
+//        for (int i = 0 ; i < TreeRoots.size(); ++i)
+//        {
+//            BinaryNode<T> BinRoot = new BinaryNode<T>;
+//            toBinaryTree(TreeRoots[i],BinRoot);
+//            BinRootArray.push_back(BinRoot);
+//        }
+//    }
 public:
     TreeNode<T> * operator [] (const int &choice) const
     {
@@ -80,6 +91,19 @@ public:
         TreeNum = 0;
     }
     
+    //将森林转化成二叉树，通过调用森林中每个树节点的toBinaryTree()例程完成。
+    void toBinaryTree(vector<BinaryTree<T>> &BinTrees)
+    {
+        for (int i = 0; i < TreeRoots.size(); ++i)
+        {
+            BinaryTree<T> instanitionBinaryTree;
+            Tree<T> instanitionTree;
+            instanitionTree.root = TreeRoots[i];
+            instanitionTree.toBinaryTree(instanitionBinaryTree);
+            
+            BinTrees.push_back(instanitionBinaryTree);
+        }
+    }
 };
 
 template<typename T>
@@ -93,7 +117,7 @@ private:
     {
         root = new TreeNode<T>(theElement);
     }
-    void toBinaryTree(TreeNode<T> *&Troot,BinaryNode<T> *&Broot)
+    void TreeToBinaryTree(TreeNode<T> *&Troot,BinaryNode<T> *&Broot)
     {
         if (Troot == nullptr)
         {
@@ -106,12 +130,12 @@ private:
         Broot->element = Troot->element;
         if(Troot->childs.size() != 0 && Troot->childs[0] != nullptr)
         {
-            toBinaryTree(Troot->childs[0],Broot->left);
+            TreeToBinaryTree(Troot->childs[0],Broot->left);
         }
         BinaryNode<T> *oldestBrother = Broot->left;
         for (int i = 1; i < Troot->childs.size(); ++i)
         {   
-            toBinaryTree(Troot->childs[i],oldestBrother->right);
+            TreeToBinaryTree(Troot->childs[i],oldestBrother->right);
             oldestBrother = oldestBrother->right;
         }
     }
@@ -144,7 +168,7 @@ public:
     void toBinaryTree(BinaryTree<T> &t)
     {
         BinaryNode<T> *Broot = t.root;
-        toBinaryTree(root,Broot);
+        TreeToBinaryTree(root,Broot);
     }
 };
 
@@ -284,6 +308,17 @@ private:
 
         F.TreeRoots.push_back(Troot);
     }
+    BinaryNode<T> * Treecpy(BinaryNode<T> *root)
+    {
+        if (root == nullptr)
+        {
+            return nullptr;
+        }
+        BinaryNode<T> *cur = new BinaryNode<T>(root->element);
+        Treecpy(cur->left);
+        Treecpy(cur->right);
+        return cur;
+    }
 public:
     BinaryTree()
     {
@@ -298,9 +333,14 @@ public:
         init();
         *this = rhs;
     }
+    BinaryTree(BinaryNode<T> *AnotherRoot)
+    {
+        root = new BinaryNode<T>;
+        root = Treecpy(AnotherRoot);
+    }
     ~BinaryTree()
     {
-        makeEmpty(root);
+//        makeEmpty(root);
     }
     void makeEmpty()
     {
