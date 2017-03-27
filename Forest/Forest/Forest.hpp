@@ -62,7 +62,7 @@ class Forest
 private:
     int TreeNum;
     vector<TreeNode<T> *>  TreeRoots;
-    
+     
     //将森林转化成二叉树，通过调用森林中每个树节点的toBinaryTree()例程完成。
 //    void toBinaryTree(vector<BinaryNode<T> *> BinRootArray)
 //    {

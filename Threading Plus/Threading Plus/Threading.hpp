@@ -169,6 +169,7 @@ private:
                 
                 if (p != nullptr && p->Rtag == Link)
                 {
+                    prev = p;
                     p = p->right;
                 }
             }

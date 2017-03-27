@@ -303,6 +303,8 @@ void Decoder(string filename,map<char,string> &CodePair)
 	string BinTemp;
 	BinBuffer.clear();
 	BinTemp.clear();
+	//AAAA DFA 
+	//FAA AAA
 	while(!BinIn.eof())
 	{
 		BinIn>>BinTemp;
