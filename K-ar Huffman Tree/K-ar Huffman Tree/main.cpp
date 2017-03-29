@@ -12,18 +12,34 @@
 
 using namespace std;
 
+string getCmprSuffix(const string &path)
+{
+	string ret;
+	ret = path;
+	for (int i = ret.size() - 1; i  >= 0; --i)
+	{
+		if (ret[i] == '.')
+		{
+			ret = ret.substr(0,i) + ".compress";
+			break;
+		}
+	}
+	return ret;
+}
 
 
 int main(int argc, const char * argv[])
 {
+
     cpresser cp;
-    string filePath;
+    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/Prq.exec";
     cout<<"*****************************************************************************\n";
     cout<<"*                                                                           *\n";
     cout<<"*                   Welcom to the little compress program                   *\n";
-    cout<<"*		                                                                   *\n";
+    cout<<"*		                                                                    *\n";
     cout<<"*                This program is based on huffman coding theory             *\n";
-    cout<<"*****************************************************************************\n";
+    cout<<"*                                                                           *\n";
+    cout<<"*****************************************************************************\n\n";
 
     cout<<"The file path is : "<<filePath<<"\n";
     cp.getPath(filePath);
@@ -32,16 +48,16 @@ int main(int argc, const char * argv[])
     HuffmanTree<8> A;
     A.getFilePath(filePath);
 
-    cout<<
     A.ComPressFile();
     cout<<std::setprecision(2)<<std::fixed;
     cout<<"The real compress ratio is "<<A.getRealRatio() * 100<<" %"<<endl;
 
     cout<<"Compress is done\n";
 
-    cout<<""
     
     HuffmanTree<8> B;
-    B.Decode("/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/第四周讲义及题解.compress");
+    B.Decode(getCmprSuffix(filePath));
+
+
     return 0;
 }

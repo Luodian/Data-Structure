@@ -23,7 +23,6 @@ private:
     HuffmanTree<32> E;
     HuffmanTree<64> F;
     double minRatio;
-    double realRatio;
     int minK;
 public:
     void getPath(const string &path)

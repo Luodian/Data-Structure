@@ -659,6 +659,8 @@ private:
                 makeEmpty(root->childs[i]);
         }
         delete root;
+        if (Text != nullptr)
+            delete [] Text;
     }
     
     string backTextArray[25];
