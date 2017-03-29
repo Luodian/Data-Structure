@@ -20,5 +20,8 @@
 #include <map>
 #include <bitset>
 #include <queue>
+#include <cstdlib>
+#include <cstdio>
+#include <string.h>
 
 #endif /* Header_h */

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::showHeap():KaryHuffman.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::genCodeVec(HuffmanNode&lt;4&gt;*, int):KaryHuffman.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "compare&lt;4&gt;::operator()(HuffmanNode&lt;4&gt; const*, HuffmanNode&lt;4&gt; const*) const:KaryHuffman.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::TransferRawText(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):KaryHuffman.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "(unsigned char)WriteChar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::genFrqHeap():KaryHuffman.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::buildHuffmanTree():KaryHuffman.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "main:main.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::makeEmpty(HuffmanNode&lt;4&gt;*&amp;):KaryHuffman.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "HuffmanTree&lt;4&gt;::genCodeVec(HuffmanNode&lt;4&gt;*, HuffmanNode&lt;4&gt;*, int):KaryHuffman.hpp">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
