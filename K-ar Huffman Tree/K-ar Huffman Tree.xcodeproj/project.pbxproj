@@ -27,6 +27,7 @@
 		F34947B01E83A5A700FBF3FE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F34947B71E83B6D900FBF3FE /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
 		F34947BA1E83C57A00FBF3FE /* KaryHuffman.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = KaryHuffman.hpp; sourceTree = "<group>"; };
+		F3FF88641E8B618F00784ED8 /* Compresser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Compresser.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 				F34947B01E83A5A700FBF3FE /* main.cpp */,
 				F34947B71E83B6D900FBF3FE /* Header.hpp */,
 				F34947BA1E83C57A00FBF3FE /* KaryHuffman.hpp */,
+				F3FF88641E8B618F00784ED8 /* Compresser.hpp */,
 			);
 			path = "K-ar Huffman Tree";
 			sourceTree = "<group>";

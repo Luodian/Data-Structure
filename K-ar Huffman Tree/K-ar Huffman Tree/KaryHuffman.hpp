@@ -79,9 +79,9 @@ private:
     char *CompressedText;
     
     string DecodeString;
+    string filePath;
 
     string suffix;
-    string CurrentDir;
 
     int TrailingZero;
     void makeEncodeTable()
@@ -130,8 +130,14 @@ private:
 
         BinaryCodeTable.clear();
         DecodeTable.clear();
-
+        TrailingZero = 0;
+        suffix.clear();
+        filePath.clear();
+        FileLen = 0;
+        CompressedFileLen = 0;
+        ratio = 0;
         makeEncodeTable();
+
     }
     void genWordFrq()
     {
@@ -196,7 +202,7 @@ private:
                 parent->childs.push_back(p);
                 parent->weight += (p->weight);
             }
-            FrqHeap.emplace(parent);
+            FrqHeap.push(parent);
         }
         root = FrqHeap.top();
     }
@@ -334,7 +340,7 @@ private:
     {
         string buffer;
         fstream WriteFile;
-        fstream BinaryWrite;
+//        fstream BinaryWrite;
         fstream logFile;
 
         suffix.clear();
@@ -354,7 +360,7 @@ private:
 
         logFile.open(logPath,ios::out | ios::trunc |  ios::binary);
 
-        BinaryWrite.open(DebugPath,ios::out | ios::trunc | ios::binary);
+//        BinaryWrite.open(DebugPath,ios::out | ios::trunc | ios::binary);
         CompressedFilePath += ".compress";
 
 
@@ -382,6 +388,7 @@ private:
                 {
                     unsigned char WriteChar = Str2Bin(buffer);
                     WriteCharBuffer.push_back(WriteChar);
+            
                     for (int i = 0; i < 8; ++i)
                     {
                         DebugBinary.push_back(buffer[i]);
@@ -405,15 +412,25 @@ private:
                 DebugBinary.push_back(buffer[i]);
             }
             WriteCharBuffer.push_back(WriteChar);
+    
         }
         
         logFile<<TrailingZero<<"\n";
 
         WriteFile.write(WriteCharBuffer.data(),WriteCharBuffer.size());
+        CompressedFileLen = WriteCharBuffer.size();
         
-        BinaryWrite.write(DebugBinary.data(),DebugBinary.size());
-
-        BinaryWrite.close();
+        fstream readFile;
+        readFile.open(CompressedFilePath,ios::in | ios::binary);
+        if (readFile)
+        {
+            readFile.seekg(0,readFile.end);
+            CompressedFileLen = readFile.tellg();
+        }
+//        BinaryWrite.write(DebugBinary.data(),DebugBinary.size());
+//
+//        BinaryWrite.close();
+        readFile.close();
         WriteFile.close();
     }
     void readLogFile(const string &CompressedFilePath)
@@ -475,8 +492,8 @@ private:
     {
         fstream readFile;
         readFile.open(CompressedPath,ios::in | ios::binary);
-        fstream BinaryWrite;
-        BinaryWrite.open("/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/Test.bin",ios::in | ios::binary);
+//        fstream BinaryWrite;
+//        BinaryWrite.open("/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/Test.bin",ios::in | ios::binary);
         string DecodeFilePath;
 
         //读入编码表和后缀名，TrailingZero等信息。
@@ -604,13 +621,32 @@ private:
         {
             genWordFrq();
             genFrqHeap();
-            showHeap();
+            // showHeap();
 
             buildHuffmanTree();
             genCodeVec(root,nullptr,0);
         }
     }
-    
+
+    void getText()
+    {
+        fstream in;
+        in.open(filePath,ios::in | ios::binary);
+        if (in)
+        {
+            in.seekg(0,in.end);
+            FileLen = in.tellg();
+            in.seekg(0,in.beg);
+            Text = new char[FileLen];
+            in.read(Text,FileLen);
+        }
+        else
+        {
+            cout<<"Please make sure the address is valid\n";
+        }
+        in.close();
+    }
+
     void makeEmpty(HuffmanNode<Kary> * &root)
     {
         if (root == nullptr)
@@ -635,38 +671,51 @@ public:
     ~HuffmanTree()
     {
         makeEmpty(root);
+
     }
-    void getString(const string &pattern)
+    void getFilePath(const string &path)
     {
-        Text = pattern;
+        filePath = path;
     }
-    void ComPressFile(const string &filePath)
+    void ComPressFile()
     {
         if (filePath.size() == 0)
         {
             cout<<"Please make sure the address is valid\n";
             return;
         }
-        fstream in;
-        in.open(filePath,ios::in | ios::binary);
-        if (in)
-        {
-            in.seekg(0,in.end);
-            FileLen = in.tellg();
-            in.seekg(0,in.beg);
-            Text = new char[FileLen];
-            in.read(Text,FileLen);
-        }
+        getText();
         Encode();
         WriteCompressedFile(filePath);
         delete [] Text;
-        in.close();
     }
     void Decode(const string &filePath)
     {
         DecodeCompressedText(filePath);
     }
-    double getRatio()
+    double getEstimateRatio()
+    {
+        getText();
+        Encode();
+        map<char,double> FrqWeightMap;
+        FrqWeightMap.clear();
+        for (auto itr : alphabet_Frq_map)
+        {
+            char sig = itr.first;
+            int weight = itr.second;
+            double frequency = (double)weight / (double) FileLen;
+            FrqWeightMap[sig] = frequency;
+        }
+        double averLen = 0;
+        for (auto itr : BinaryCodeTable)
+        {
+            char sig = itr.first;
+            int len = (int)itr.second.size();
+            averLen += (FrqWeightMap[sig] * len);
+        }
+        return averLen / 8;
+    }
+    double getRealRatio()
     {
         return (double)CompressedFileLen  / (double)FileLen;
     }
