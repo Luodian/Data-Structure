@@ -37,20 +37,54 @@ using namespace std;
 //     ConverToTree(BinaryRoot->left,TreeRoot->childs[0]);
 // }
 
+void B2F_small()
+{
+    string order = "ABDH##I##E##CF#J##G##";
+    // generator<int> gen;
+    // gen.genTree();
+    
+    BinaryTree<char> first(order);
+    first.Display();
+
+    Forest<char> last;
+    first.toForest(last);
+    vector<BinaryTree<char>> Btrees;
+
+    
+    last.toBinaryTree(Btrees);
+    last.Display();
+}
+
+void F2B_small()
+{
+    string order = "ABDH##I##E##CF#J##G##";
+    Forest<char> tempForest;
+    tempForest.CreateForest(order);
+    tempForest.Display();
+    
+    vector<BinaryTree<char>> Btrees;
+    tempForest.toBinaryTree(Btrees);
+    for (int i = 0; i < Btrees.size(); ++i)
+    {
+        Btrees[i].Display();
+    }
+//    tempForest.Display();
+}
 
 int main(int argc, const char * argv[])
 {
-	string order = "ABDH##I##E##CF#J##G##";
-    generator<int> gen;
-    gen.genUfs(5, 10);
+    cout<<"********************************************************************\n";
+    cout<<"*                                                                  *\n";
+    cout<<"*     Here is a small program to transfer binary tree and forest   *\n";
+    cout<<"*                                                                  *\n";
+    cout<<"********************************************************************\n";
+
+    cout<<"\n\n\n         Here is a transformation from binary tree to forest\n";
+    cout<<"********************************************************************\n\n\n";
+    B2F_small();
     
-    
-	BinaryTree<char> first(order);
-	Forest<char> last;
-	first.toForest(last);
-    vector<BinaryTree<char>> Btrees;
-    last.toBinaryTree(Btrees);
-    
-    cout << "Hello, World!\n";
+    cout<<"\n\n           Here is a transformation from forest to binary tree\n";
+    cout<<"********************************************************************\n\n\n";
+    F2B_small();
     return 0;
 }

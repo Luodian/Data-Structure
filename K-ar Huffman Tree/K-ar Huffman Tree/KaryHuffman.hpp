@@ -512,6 +512,7 @@ private:
         
         if (readFile)
         {
+            
             readFile.seekg(0,readFile.end);
             
             CompressedFileLen = readFile.tellg();
@@ -520,6 +521,7 @@ private:
             CompressedText = new char[CompressedFileLen];
 
             readFile.read(CompressedText,CompressedFileLen);
+            
         }
         if (CompressedFileLen == 0)
         {
@@ -573,14 +575,14 @@ private:
             }
             i = j - 1;
         }
-//        if (FileLen != 0)
-//        {
-//            writeFile.write(TextBackUp.data(),TextBackUp.size());
-//        }
-//        else
-//        {
+        if (FileLen != 0)
+        {
+            writeFile.write(TextBackUp.data(),TextBackUp.size());
+        }
+        else
+        {
             writeFile.write(WriteBackBuffer.data(),WriteBackBuffer.size());
-//        }
+        }
         //专门特判TrailingZero的情况
 //        j = (int)DecodeBuffer.size() - 8;
 //        while(j < (DecodeBuffer.size() - TrailingZero))

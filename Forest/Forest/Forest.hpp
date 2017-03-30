@@ -63,10 +63,9 @@ class Forest
     friend class BinaryTree<T>;
     friend class Tree<T>;
     friend class generator<T>;
-private:
+public:
     int TreeNum;
     vector<TreeNode<T> *>  TreeRoots;
-     
     //将森林转化成二叉树，通过调用森林中每个树节点的toBinaryTree()例程完成。
 //    void toBinaryTree(vector<BinaryNode<T> *> BinRootArray)
 //    {
@@ -89,12 +88,39 @@ public:
             return nullptr;
         }
     }
+    TreeNode<T> * Treecpy(TreeNode<T> *q)
+    {
+        if (q == nullptr)
+        {
+            return nullptr;
+        }
+        TreeNode<T> *cur = new TreeNode<T>(q->element);
+        cur->childs.resize(q->childs.size());
+        for (int i = 0; i < q->childs.size(); ++i)
+        {
+            cur->childs[i] = Treecpy(q->childs[i]);
+        }
+        return cur;
+    }
     Forest()
     {
         TreeRoots.clear();
         TreeNum = 0;
     }
-    
+    void CreateForest(const string &order)
+    {
+        BinaryTree<T> first(order);
+        Forest<T> last;
+
+        first.toForest(last);
+
+        for (int i = 0; i < last.TreeRoots.size(); ++i)
+        {
+            TreeNode<T> *p = last.TreeRoots[i];
+            TreeNode<T> *q = Treecpy(p);
+            TreeRoots.push_back(q);
+        }
+    }
     //将森林转化成二叉树，通过调用森林中每个树节点的toBinaryTree()例程完成。
     void toBinaryTree(vector<BinaryTree<T>> &BinTrees)
     {
@@ -108,6 +134,18 @@ public:
             BinTrees.push_back(instanitionBinaryTree);
         }
     }
+    void Display()
+    {
+        for (int i = 0; i < TreeRoots.size(); ++i)
+        {
+            cout<<"The "<<i + 1<<"th tree is :\n";
+            Tree<T> A;
+            A.root = TreeRoots[i];
+            A.Display();
+            cout<<"\n";
+        }
+    }
+
 };
 
 template<typename T>
@@ -159,6 +197,23 @@ private:
         }
         return cur;
     }
+    void Display(TreeNode<T> *p,int level)
+    {
+        int size = (int)p->childs.size();
+        for (int i = size - 1; i >= size / 2; --i)
+        {
+            Display(p->childs[i], level + 1);
+        }
+        for (int j = 0; j < level; j++)
+        {
+            cout<<"\t";
+        }
+        cout <<p->element<<endl;
+        for (int i = size / 2 - 1; i >= 0; --i)
+        {
+            Display(p->childs[i], level + 1);
+        }
+    }
 public:
     Tree(const T &theElement = '*')
     {
@@ -175,6 +230,10 @@ public:
         BinaryNode<T> *Broot = t.root;
         TreeToBinaryTree(root,Broot);
     }
+    void Display()
+    {
+        Display(root,0);
+    }
 };
 
 template<typename T>
@@ -182,8 +241,10 @@ class BinaryTree
 {
     friend class Tree<T>;
     friend class Forest<T>;
+    friend class generator<T>;
 private:
     BinaryNode<T> *root;
+
     void init()
     {
         Maxsize = 10000;
@@ -358,6 +419,7 @@ public:
     }
     void Display()
     {
+        cout<<"The binary tree's graph is : \n\n";
         h_x = 0;
         TreeHeight = 0;
         _try(root);
@@ -381,18 +443,39 @@ public:
 };
 
 constexpr static int maxn = 100005;
-template <typename T>
+
+template<typename T>
 class generator
 {
+    friend class Tree<T>;
+    friend class TreeNode<T>;
+    friend class BinaryTree<T>;
+    friend class BinaryNode<T>;
+    friend class Forest<T>;
 private:
-    vector<int> Tree[maxn];
+    Tree<T> genT;
+    BinaryTree<T> genBinT;
+    vector<int> G[maxn];
     vector<bool> vis;
     int pre[maxn];
     TreeNode<T> *root;
+    void genTree(TreeNode<T> *Troot)
+    {
+        genT.root = Troot;
+        genT.toBinaryTree(genBinT);
+    }
 public:
     generator()
     {
         root = new TreeNode<T>;
+    }
+    void genPre()
+    {
+        genBinT.PreTraver();
+    }
+    void genPost()
+    {
+        genPost.PostTraver();
     }
     void init(int n)
     {
@@ -401,7 +484,7 @@ public:
         vis.resize(maxn);
         for (int i = 0; i < maxn; ++i)
         {
-            Tree[i].clear();
+            G[i].clear();
         }
         for (int i = 0; i < n; ++i)
         {
@@ -417,29 +500,22 @@ public:
     //dfs的过程建树
     void dfs(int cur,TreeNode<T> *&curRoot)
     {
-        if (vis[cur] == 1)
+        vis[cur] = 1;
+        for (int i = 0; i < G[cur].size(); ++i)
         {
-            return;
-        }
-        else
-        {
-            vis[cur] = 1;
-            for (int i = 0; i < Tree[cur].size(); ++i)
+            int next = G[cur][i];
+            if (vis[next] == 0)
             {
-                int next = Tree[cur][i];
-                if (vis[next] == 0)
+                vis[next] = 1;
+                if (curRoot == nullptr)
                 {
-                    vis[next] = 1;
-                    if (curRoot == nullptr)
-                    {
-                        curRoot = new TreeNode<T>;
-                    }
-                    curRoot->element = cur;
-                    TreeNode<T> *p = new TreeNode<T>;
-                    p->element = next;
-                    curRoot->childs.push_back(p);
-                    dfs(next,p);
+                    curRoot = new TreeNode<T>;
                 }
+                curRoot->element = cur;
+                TreeNode<T> *p = new TreeNode<T>;
+                p->element = next;
+                curRoot->childs.push_back(p);
+                dfs(next,p);
             }
         }
     }
@@ -449,63 +525,82 @@ public:
     //注意 m <= (n*n)/2;
     void genUfs(int n,int m)
     {
-        fstream out;
-        out.open("/Users/luodian/Desktop/out.txt",ios::out | ios::trunc);
+        fstream in;
+        in.open("/Users/luodian/Desktop/out.txt",ios::in);
         
-        unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
-        default_random_engine generator(seed);
-        uniform_int_distribution<int> distribution(1,10);
-        auto dice = bind(distribution,generator);
+        // unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
+        // default_random_engine generator(seed);
+        // uniform_int_distribution<int> distribution(1,n);
+        // auto dice = bind(distribution,generator);
         set<pair<int,int>> EdgeSet;
         
         EdgeSet.clear();
-        pair<int,int> foo;
-        foo = make_pair(1,2);
-        EdgeSet.insert(foo);
-        while(EdgeSet.size() != m)
-        {
-            int u = dice();
-            int v = dice();
+        // pair<int,int> foo;
+        // foo = make_pair(1,2);
+        // EdgeSet.insert(foo);
+        // while(EdgeSet.size() != m)
+        // {
+        //     int u = dice();
+        //     int v = dice();
             
-            pair<int,int> foo;
-            foo = make_pair(u,v);
-            //没有自环，没有重边
-            if (u != v && EdgeSet.find(foo) == EdgeSet.end())
-            {
-                EdgeSet.insert(foo);
-            }
-        }
+        //     pair<int,int> foo;
+        //     foo = make_pair(u,v);
+        //     //没有自环，没有重边
+        //     if (u != v && EdgeSet.find(foo) == EdgeSet.end())
+        //     {
+        //         EdgeSet.insert(foo);
+        //     }
+        // }
         
         init(maxn);
-        //UFS去环，保证是一颗无根树
-        for (auto itr : EdgeSet)
-        {
-            int u = itr.first;
-            int v = itr.second;
-            int fu = find(u);
-            int fv = find(v);
-            if (fv != fu)
-            {
-                pre[fu] = fv;
-                pair<int,int> foo;
-                foo = make_pair(u,v);
-                EdgeSet.erase(foo);
-            }
-        }
+        // //UFS去环，保证是一颗无根树
+        // for (auto itr : EdgeSet)
+        // {
+        //     int u = itr.first;
+        //     int v = itr.second;
+        //     int fu = find(u);
+        //     int fv = find(v);
+        //     if (fv != fu)
+        //     {
+        //         pre[fu] = fv;
+        //         pair<int,int> foo;
+        //         foo = make_pair(u,v);
+        //         EdgeSet.erase(foo);
+        //     }
+        // }
         //建立无根树
-        for (auto itr : EdgeSet)
+        int u,v;
+        for (int i = 0; i < 8; ++i)
         {
-            int u = itr.first;
-            int v = itr.second;
-            out<<u<<" "<<v<<"\n";
-            Tree[u].push_back(v);
-            Tree[v].push_back(u);
+            in>>u>>v;
+            cout<<u<<" "<<v<<"\n";
+            G[u].push_back(v);
+            G[v].push_back(u);
         }
         dfs(1,root);
-        out.close();
-        
+        in.close();
+    }
+    void genTree()
+    {
+        genUfs(5,10);
+        genTree(root);
+    }
+    vector<T> accumulation;
+    void getString(BinaryNode<T> *root)
+    {
+        if (root != nullptr)
+        {
+            accumulation.push_back(root->element);
+            getString(root->left);
+            getString(root->right);
+        }
+        else
+        {
+            accumulation.push_back("#");
+        }
     }
 };
+
 
 
 #endif /* Forest_h */
