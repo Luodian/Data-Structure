@@ -32,7 +32,8 @@ int main(int argc, const char * argv[])
 {
 
     cpresser cp;
-    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/Prq.exec";
+    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/in.txt";
+    
     cout<<"*****************************************************************************\n";
     cout<<"*                                                                           *\n";
     cout<<"*                   Welcom to the little compress program                   *\n";
@@ -45,19 +46,23 @@ int main(int argc, const char * argv[])
     cp.getPath(filePath);
     cp.getMinimalK();
     
-    HuffmanTree<8> A;
+    HuffmanTree<2> A,B;
     A.getFilePath(filePath);
-
+    
+    cout<<"Compressing........"<<endl;
     A.ComPressFile();
     cout<<std::setprecision(2)<<std::fixed;
-    cout<<"The real compress ratio is "<<A.getRealRatio() * 100<<" %"<<endl;
-
-    cout<<"Compress is done\n";
-
     
-    HuffmanTree<8> B;
-    B.Decode(getCmprSuffix(filePath));
+    cout<<"Compress is done.\n";
+    cout<<"The actual compress ratio is "<<A.getRealRatio() * 100<<" %"<<"\n\n";
 
-
+    cout<<"Decode file from "<<getCmprSuffix(filePath)<<"\n";
+    
+    cout<<"Decoding......\n";
+    
+    string CmprSuffxiPath = getCmprSuffix(filePath);
+    B.Decode(CmprSuffxiPath);
+    
+    cout<<"Decode is done.\n";
     return 0;
 }

@@ -80,7 +80,6 @@ public:
         cout<<"The minimal k of this file is "<<minK<<endl;
         cout<<std::setprecision(2)<<std::fixed;
         cout<<"The estimate compress ratio is "<<minRatio * 100<<" %"<<endl;
-        cout<<"Ready to compress ......."<<endl;
     }
 };
 

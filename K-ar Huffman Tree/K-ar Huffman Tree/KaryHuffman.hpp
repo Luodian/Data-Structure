@@ -70,6 +70,7 @@ private:
 
     //对二进制编码镜像用于解码。
     map<string,char> DecodeTable;
+    vector<char> TextBackUp;
 
     double ratio;
     
@@ -139,7 +140,7 @@ private:
         makeEncodeTable();
 
     }
-    void genWordFrq()
+    void replaceBlank()
     {
         for (int i = 0; i < FileLen; ++i)
         {
@@ -147,6 +148,13 @@ private:
             {
                 Text[i] = '_';
             }
+        }
+    }
+    void genWordFrq()
+    {
+        replaceBlank();
+        for (int i = 0; i < FileLen; ++i)
+        {
             alphabet_Frq_map[Text[i]] ++;
         }
     }
@@ -420,17 +428,9 @@ private:
         WriteFile.write(WriteCharBuffer.data(),WriteCharBuffer.size());
         CompressedFileLen = WriteCharBuffer.size();
         
-        fstream readFile;
-        readFile.open(CompressedFilePath,ios::in | ios::binary);
-        if (readFile)
-        {
-            readFile.seekg(0,readFile.end);
-            CompressedFileLen = readFile.tellg();
-        }
 //        BinaryWrite.write(DebugBinary.data(),DebugBinary.size());
 //
 //        BinaryWrite.close();
-        readFile.close();
         WriteFile.close();
     }
     void readLogFile(const string &CompressedFilePath)
@@ -522,6 +522,7 @@ private:
         if (readFile)
         {
             readFile.seekg(0,readFile.end);
+            
             CompressedFileLen = readFile.tellg();
             readFile.seekg(0,readFile.beg);
 
@@ -587,8 +588,14 @@ private:
             }
             i = j - 1;
         }
-        
-        writeFile.write(WriteBackBuffer.data(),WriteBackBuffer.size());
+        if (FileLen != 0)
+        {
+            writeFile.write(TextBackUp.data(),TextBackUp.size());
+        }
+        else
+        {
+            writeFile.write(WriteBackBuffer.data(),WriteBackBuffer.size());
+        }
         //专门特判TrailingZero的情况
 //        j = (int)DecodeBuffer.size() - 8;
 //        while(j < (DecodeBuffer.size() - TrailingZero))
@@ -628,7 +635,7 @@ private:
         }
     }
 
-    void getText()
+    bool getText()
     {
         fstream in;
         in.open(filePath,ios::in | ios::binary);
@@ -639,12 +646,23 @@ private:
             in.seekg(0,in.beg);
             Text = new char[FileLen];
             in.read(Text,FileLen);
+
+
+            in.seekg(0,in.end);
+            long long BackUpFileLen = in.tellg();
+            in.seekg(0,in.beg);
+
+            TextBackUp.resize(BackUpFileLen);
+            in.read(TextBackUp.data(),TextBackUp.size());
+            in.close();
+            return 1;
         }
         else
         {
+            in.close();
             cout<<"Please make sure the address is valid\n";
+            return 0;
         }
-        in.close();
     }
 
     void makeEmpty(HuffmanNode<Kary> * &root)
@@ -659,8 +677,6 @@ private:
                 makeEmpty(root->childs[i]);
         }
         delete root;
-        if (Text != nullptr)
-            delete [] Text;
     }
     
     string backTextArray[25];
@@ -681,12 +697,18 @@ public:
     }
     void ComPressFile()
     {
+        getText();
         if (filePath.size() == 0)
         {
             cout<<"Please make sure the address is valid\n";
             return;
         }
-        getText();
+        bool flag = getText();
+        if (flag == 0)
+        {
+            cout<<"Please make sure the address is valid\n";
+            return;
+        }
         Encode();
         WriteCompressedFile(filePath);
         delete [] Text;
