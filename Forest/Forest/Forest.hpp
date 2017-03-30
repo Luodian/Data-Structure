@@ -18,6 +18,7 @@ template<typename T> class BinaryTree;
 template<typename T> class TreeNode;
 template<typename T> class BinaryNode;
 template<typename T> class Tree;
+template<typename T> class generator;
 
 template<typename T>
 class BinaryNode
@@ -25,6 +26,7 @@ class BinaryNode
     friend class BinaryTree<T>;
     friend class Forest<T>;
     friend class Tree<T>;
+    friend class generator<T>;
 private:
     T element;
     BinaryNode<T> *left;
@@ -43,6 +45,7 @@ class TreeNode
     friend class Tree<T>;
     friend class BinaryTree<T>;
     friend class Forest<T>;
+    friend class generator<T>;
 private:
     T element;
     vector<TreeNode<T> *> childs;
@@ -59,6 +62,7 @@ class Forest
 {
     friend class BinaryTree<T>;
     friend class Tree<T>;
+    friend class generator<T>;
 private:
     int TreeNum;
     vector<TreeNode<T> *>  TreeRoots;
@@ -111,6 +115,7 @@ class Tree
 {
     friend class BinaryTree<T>;
     friend class Forest<T>;
+    friend class generator<T>;
 private:
     TreeNode<T> *root;
     void init(const T &theElement = '*')
@@ -375,6 +380,132 @@ public:
     }
 };
 
+constexpr static int maxn = 100005;
+template <typename T>
+class generator
+{
+private:
+    vector<int> Tree[maxn];
+    vector<bool> vis;
+    int pre[maxn];
+    TreeNode<T> *root;
+public:
+    generator()
+    {
+        root = new TreeNode<T>;
+    }
+    void init(int n)
+    {
+        root = nullptr;
+        vis.clear();
+        vis.resize(maxn);
+        for (int i = 0; i < maxn; ++i)
+        {
+            Tree[i].clear();
+        }
+        for (int i = 0; i < n; ++i)
+        {
+            pre[i] = i;
+        }
+    }
+
+    int find(const int &x)
+    {
+        return pre[x] == x ? x : pre[x] = find(pre[x]);
+    }
+
+    //dfs的过程建树
+    void dfs(int cur,TreeNode<T> *&curRoot)
+    {
+        if (vis[cur] == 1)
+        {
+            return;
+        }
+        else
+        {
+            vis[cur] = 1;
+            for (int i = 0; i < Tree[cur].size(); ++i)
+            {
+                int next = Tree[cur][i];
+                if (vis[next] == 0)
+                {
+                    vis[next] = 1;
+                    if (curRoot == nullptr)
+                    {
+                        curRoot = new TreeNode<T>;
+                    }
+                    curRoot->element = cur;
+                    TreeNode<T> *p = new TreeNode<T>;
+                    p->element = next;
+                    curRoot->childs.push_back(p);
+                    dfs(next,p);
+                }
+            }
+        }
+    }
+    
+    //m为传入边数的参数
+    //n为传入点的参数
+    //注意 m <= (n*n)/2;
+    void genUfs(int n,int m)
+    {
+        fstream out;
+        out.open("/Users/luodian/Desktop/out.txt",ios::out | ios::trunc);
+        
+        unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
+        default_random_engine generator(seed);
+        uniform_int_distribution<int> distribution(1,10);
+        auto dice = bind(distribution,generator);
+        set<pair<int,int>> EdgeSet;
+        
+        EdgeSet.clear();
+        pair<int,int> foo;
+        foo = make_pair(1,2);
+        EdgeSet.insert(foo);
+        while(EdgeSet.size() != m)
+        {
+            int u = dice();
+            int v = dice();
+            
+            pair<int,int> foo;
+            foo = make_pair(u,v);
+            //没有自环，没有重边
+            if (u != v && EdgeSet.find(foo) == EdgeSet.end())
+            {
+                EdgeSet.insert(foo);
+            }
+        }
+        
+        init(maxn);
+        //UFS去环，保证是一颗无根树
+        for (auto itr : EdgeSet)
+        {
+            int u = itr.first;
+            int v = itr.second;
+            int fu = find(u);
+            int fv = find(v);
+            if (fv != fu)
+            {
+                pre[fu] = fv;
+                pair<int,int> foo;
+                foo = make_pair(u,v);
+                EdgeSet.erase(foo);
+            }
+        }
+        //建立无根树
+        for (auto itr : EdgeSet)
+        {
+            int u = itr.first;
+            int v = itr.second;
+            out<<u<<" "<<v<<"\n";
+            Tree[u].push_back(v);
+            Tree[v].push_back(u);
+        }
+        dfs(1,root);
+        out.close();
+        
+    }
+};
 
 
 #endif /* Forest_h */

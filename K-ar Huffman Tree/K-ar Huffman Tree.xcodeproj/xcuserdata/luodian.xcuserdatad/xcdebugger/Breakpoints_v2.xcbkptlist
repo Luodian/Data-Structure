@@ -6,33 +6,541 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "K-ar Huffman Tree/KaryHuffman.hpp"
-            timestampString = "512399460.07782"
+            timestampString = "512540190.165923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "genFrqHeap()"
+            startingLineNumber = "629"
+            endingLineNumber = "629"
+            landmarkName = "getText()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;2&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.729552"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;4&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.732416"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;8&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.735117"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;16&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.73714"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;32&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.738532"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
+                  offsetFromSymbolStart = "808">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;64&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.739822"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "629"
+                  endingLineNumber = "629"
+                  offsetFromSymbolStart = "808">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "K-ar Huffman Tree/KaryHuffman.hpp"
-            timestampString = "512399460.07782"
+            timestampString = "512540190.86737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
-            landmarkName = "genFrqHeap()"
+            startingLineNumber = "630"
+            endingLineNumber = "630"
+            landmarkName = "getText()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;2&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.743418"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;4&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.744997"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;8&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.746283"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;16&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.747543"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;32&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.74884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "841">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;64&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.750116"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "630"
+                  endingLineNumber = "630"
+                  offsetFromSymbolStart = "841">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "K-ar Huffman Tree/KaryHuffman.hpp"
+            timestampString = "512540191.375797"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "631"
+            endingLineNumber = "631"
+            landmarkName = "getText()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;2&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.753884"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "631"
+                  endingLineNumber = "631"
+                  offsetFromSymbolStart = "921">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;4&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.755256"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "631"
+                  endingLineNumber = "631"
+                  offsetFromSymbolStart = "921">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;8&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.756535"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "631"
+                  endingLineNumber = "631"
+                  offsetFromSymbolStart = "921">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;16&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.757796"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "631"
+                  endingLineNumber = "631"
+                  offsetFromSymbolStart = "921">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;32&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.759201"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "631"
+                  endingLineNumber = "631"
+                  offsetFromSymbolStart = "921">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;64&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.760468"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "631"
+                  endingLineNumber = "631"
+                  offsetFromSymbolStart = "921">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "K-ar Huffman Tree/KaryHuffman.hpp"
+            timestampString = "512540192.474446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "632"
+            endingLineNumber = "632"
+            landmarkName = "getText()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;2&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.764167"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;4&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.765439"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;8&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.76677"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;16&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.7682"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;32&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.769698"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "949">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;64&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.771007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "632"
+                  endingLineNumber = "632"
+                  offsetFromSymbolStart = "949">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "K-ar Huffman Tree/KaryHuffman.hpp"
+            timestampString = "512540193.395979"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "633"
+            endingLineNumber = "633"
+            landmarkName = "getText()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;2&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.774459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "633"
+                  endingLineNumber = "633"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;4&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.775725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "633"
+                  endingLineNumber = "633"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;8&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.777017"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "633"
+                  endingLineNumber = "633"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;16&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.778529"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "633"
+                  endingLineNumber = "633"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;32&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.779838"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "633"
+                  endingLineNumber = "633"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HuffmanTree&lt;64&gt;::getText()"
+                  moduleName = "K-ar Huffman Tree"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luodian/Desktop/DSA/K-ar%20Huffman%20Tree/K-ar%20Huffman%20Tree/KaryHuffman.hpp"
+                  timestampString = "512540196.781095"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "633"
+                  endingLineNumber = "633"
+                  offsetFromSymbolStart = "1018">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

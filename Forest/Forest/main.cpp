@@ -41,11 +41,16 @@ using namespace std;
 int main(int argc, const char * argv[])
 {
 	string order = "ABDH##I##E##CF#J##G##";
+    generator<int> gen;
+    gen.genUfs(5, 10);
+    
+    
 	BinaryTree<char> first(order);
 	Forest<char> last;
 	first.toForest(last);
     vector<BinaryTree<char>> Btrees;
     last.toBinaryTree(Btrees);
+    
     cout << "Hello, World!\n";
     return 0;
 }

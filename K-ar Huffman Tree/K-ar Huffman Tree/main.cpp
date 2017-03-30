@@ -32,7 +32,7 @@ int main(int argc, const char * argv[])
 {
 
     cpresser cp;
-    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/in.txt";
+    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/11.docx";
     
     cout<<"*****************************************************************************\n";
     cout<<"*                                                                           *\n";
@@ -46,11 +46,12 @@ int main(int argc, const char * argv[])
     cp.getPath(filePath);
     cp.getMinimalK();
     
-    HuffmanTree<2> A,B;
+    HuffmanTree<4> A,B;
     A.getFilePath(filePath);
     
     cout<<"Compressing........"<<endl;
     A.ComPressFile();
+    A.debug("/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/in.debug");
     cout<<std::setprecision(2)<<std::fixed;
     
     cout<<"Compress is done.\n";
@@ -61,7 +62,7 @@ int main(int argc, const char * argv[])
     cout<<"Decoding......\n";
     
     string CmprSuffxiPath = getCmprSuffix(filePath);
-    B.Decode(CmprSuffxiPath);
+    A.Decode(CmprSuffxiPath);
     
     cout<<"Decode is done.\n";
     return 0;

@@ -152,7 +152,7 @@ private:
     }
     void genWordFrq()
     {
-        replaceBlank();
+//        replaceBlank();
         for (int i = 0; i < FileLen; ++i)
         {
             alphabet_Frq_map[Text[i]] ++;
@@ -214,16 +214,16 @@ private:
         }
         root = FrqHeap.top();
     }
-    void showHeap()
-    {
-        priority_queue<HuffmanNode<Kary>*,vector<HuffmanNode<Kary> *>,compare<Kary>> T = FrqHeap;
-        while(!T.empty())
-        {
-            cout<<T.top()->weight<<" "<<T.top()->element<<" "<<T.top()<<endl;
-            T.pop();
-        }
-        cout<<endl;
-    }
+//    void showHeap()
+//    {
+//        priority_queue<HuffmanNode<Kary>*,vector<HuffmanNode<Kary> *>,compare<Kary>> T = FrqHeap;
+//        while(!T.empty())
+//        {
+//            cout<<T.top()->weight<<" "<<T.top()->element<<" "<<T.top()<<endl;
+//            T.pop();
+//        }
+//        cout<<endl;
+//    }
     string accumulation;
     string dec2bin(int n)
     {
@@ -377,7 +377,7 @@ private:
         logFile<<BinaryCodeTable.size()<<"\n";
         for (auto itr : BinaryCodeTable)
         {
-            logFile<<itr.first<<" "<<itr.second<<"\n";        
+            logFile<<(int)(itr.first)<<" "<<itr.second<<"\n";
         }
         logFile<<suffix<<"\n";
         vector<char> DebugBinary;
@@ -450,35 +450,26 @@ private:
         }
 
         logPath += ".log";
+        int IntSig;
         char sig;
-        string CodeBuffer;
-        string pairBuffer;
+        string codeBuffer;
         suffix.clear();
         in.open(logPath,ios::in | ios::binary);
         if (in)
         {
-            int tableSize;
-            in>>tableSize;
-            for (int i = 0; i < tableSize + 1; ++i)
+            int logSize;
+            in>>logSize;
+            if (logSize > 255)
             {
-                getline(in,pairBuffer);
-                if (pairBuffer.size() == 0)
-                {
-                    continue;
-                }
-                sig = pairBuffer[0];
-                if (sig == ' ')
-                {
-                    pairBuffer = pairBuffer.substr(1,pairBuffer.size() - 1);
-                    DecodeTable[pairBuffer] = '\n';
-                    continue;
-                }
-                CodeBuffer = pairBuffer.substr(2,pairBuffer.size() - 2);
-                DecodeTable[CodeBuffer] = sig;
+                cout<<"Logsize too large, Error\n";
+                return;
             }
-            in>>sig;
-            in>>CodeBuffer;
-            DecodeTable[CodeBuffer] = sig;
+            for (int i = 0; i < logSize; ++i)
+            {
+                in>>IntSig>>codeBuffer;
+                char sig = (char)IntSig;
+                DecodeTable[codeBuffer] = sig;
+            }
             in>>suffix;
             in>>TrailingZero;
         }
@@ -574,28 +565,22 @@ private:
                 TempUse.push_back(DecodeBuffer[j++]);
                 if (DecodeTable.find(TempUse) != DecodeTable.end())
                 {
-                    if (DecodeTable[TempUse] == '_')
-                    {
-                        WriteBackBuffer.push_back(' ');
-                    }
-                    else
-                    {
-                        WriteBackBuffer.push_back(DecodeTable[TempUse]);
-                    }
+                    char temp = DecodeTable[TempUse];
+                    WriteBackBuffer.push_back(DecodeTable[TempUse]);
                     TempUse.clear();
                     break;
                 }
             }
             i = j - 1;
         }
-        if (FileLen != 0)
-        {
-            writeFile.write(TextBackUp.data(),TextBackUp.size());
-        }
-        else
-        {
+//        if (FileLen != 0)
+//        {
+//            writeFile.write(TextBackUp.data(),TextBackUp.size());
+//        }
+//        else
+//        {
             writeFile.write(WriteBackBuffer.data(),WriteBackBuffer.size());
-        }
+//        }
         //专门特判TrailingZero的情况
 //        j = (int)DecodeBuffer.size() - 8;
 //        while(j < (DecodeBuffer.size() - TrailingZero))
@@ -689,7 +674,6 @@ public:
     ~HuffmanTree()
     {
         makeEmpty(root);
-
     }
     void getFilePath(const string &path)
     {
@@ -754,10 +738,25 @@ public:
                 out<<"Zn"<<" "<<itr.second<<"\n";
                 continue;
             }
+            if (itr.first == ' ')
+            {
+                out<<"Bn"<<" "<<itr.second<<"\n";
+                continue;
+            }
             out<<itr.first<<" "<<itr.second<<"\n";
         }
         out<<"\n";
         for (auto itr : DecodeTable)
+        {
+            if (itr.second == '\n')
+            {
+                out<<itr.first<<" "<<"Zn"<<"\n";
+                continue;
+            }
+            out<<itr.first<<" "<<itr.second<<"\n";
+        }
+        out<<"\n";
+        for (auto itr : alphabet_Frq_map)
         {
             if (itr.second == '\n')
             {

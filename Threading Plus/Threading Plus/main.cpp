@@ -11,10 +11,17 @@
 
 const int maxn = 10005;
 vector<int> Tree[maxn];
+vector<bool> vis;
 int pre[maxn];
 
 void init(int n)
 {
+    vis.clear();
+    vis.resize(maxn);
+    for (int i = 0; i < maxn; ++i)
+    {
+        Tree[i].clear();
+    }
     for (int i = 0; i < n; ++i)
     {
         pre[i] = i;
@@ -24,6 +31,23 @@ void init(int n)
 int find(const int &x)
 {
     return pre[x] == x ? x : pre[x] = find(pre[x]);
+}
+
+//dfs的过程建树
+void dfs(int cur,int father)
+{
+    if (vis[cur] == 1)
+    {
+        return;
+    }
+    else
+    {
+        for (int i = 0; i < cur.size(); ++i)
+        {
+            int next = Tree[cur][i];
+
+        }
+    }
 }
 
 //m为传入边数的参数
@@ -39,6 +63,7 @@ void genUfs(int n,int m)
     uniform_int_distribution<int> distribution(0,10000);
     auto dice = bind(distribution,generator);
     set<pair<int,int>> EdgeSet;
+
     EdgeSet.clear();
     while(EdgeSet.size() != m)
     {
@@ -66,8 +91,21 @@ void genUfs(int n,int m)
         if (fv != fu)
         {
             fv = pre[fu];
+            pair<int,int> foo;
+            foo = make_pair(u,v);
+            EdgeSet.erase(foo);
         }
     }
+
+    //建立无根树
+    for (auto itr : EdgeSet)
+    {
+        int u = itr.first;
+        int v = itr.second;
+        Tree[u].push_back(v);
+        Tree[v].push_back(u);
+    }
+
 }
 
 
