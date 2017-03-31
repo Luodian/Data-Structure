@@ -469,14 +469,14 @@ public:
     {
         root = new TreeNode<T>;
     }
-    void genPre()
-    {
-        genBinT.PreTraver();
-    }
-    void genPost()
-    {
-        genPost.PostTraver();
-    }
+    // void genPre()
+    // {
+    //     genBinT.PreTraver();
+    // }
+    // void genPost()
+    // {
+    //     genPost.PostTraver();
+    // }
     void init(int n)
     {
         root = nullptr;

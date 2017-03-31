@@ -459,11 +459,11 @@ private:
         {
             int logSize;
             in>>logSize;
-            if (logSize > 255)
-            {
-                cout<<"Logsize too large, Error\n";
-                return;
-            }
+//            if (logSize > 255)
+//            {
+//                cout<<"Logsize too large, Error\n";
+//                return;
+//            }
             for (int i = 0; i < logSize; ++i)
             {
                 in>>IntSig>>codeBuffer;

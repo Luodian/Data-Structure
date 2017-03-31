@@ -32,7 +32,7 @@ int main(int argc, const char * argv[])
 {
 
     cpresser cp;
-    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/11.docx";
+    string filePath = "/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/N叉哈夫曼树.doc";
     
     cout<<"*****************************************************************************\n";
     cout<<"*                                                                           *\n";
@@ -62,7 +62,7 @@ int main(int argc, const char * argv[])
     cout<<"Decoding......\n";
     
     string CmprSuffxiPath = getCmprSuffix(filePath);
-    A.Decode(CmprSuffxiPath);
+    A.Decode("/Users/luodian/Desktop/DSA/K-ar Huffman Tree/K-ar Huffman Tree/DATA/N叉哈夫曼树.compress");
     
     cout<<"Decode is done.\n";
     return 0;
