@@ -528,29 +528,29 @@ public:
         fstream in;
         in.open("/Users/luodian/Desktop/out.txt",ios::in);
         
-        // unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
-        // default_random_engine generator(seed);
-        // uniform_int_distribution<int> distribution(1,n);
-        // auto dice = bind(distribution,generator);
+        unsigned int seed = (unsigned int)chrono::system_clock::now().time_since_epoch().count();
+        default_random_engine generator(seed);
+        uniform_int_distribution<int> distribution(1,n);
+        auto dice = bind(distribution,generator);
         set<pair<int,int>> EdgeSet;
         
         EdgeSet.clear();
-        // pair<int,int> foo;
-        // foo = make_pair(1,2);
-        // EdgeSet.insert(foo);
-        // while(EdgeSet.size() != m)
-        // {
-        //     int u = dice();
-        //     int v = dice();
+        pair<int,int> foo;
+        foo = make_pair(1,2);
+        EdgeSet.insert(foo);
+        while(EdgeSet.size() != m)
+        {
+            int u = dice();
+            int v = dice();
             
-        //     pair<int,int> foo;
-        //     foo = make_pair(u,v);
-        //     //没有自环，没有重边
-        //     if (u != v && EdgeSet.find(foo) == EdgeSet.end())
-        //     {
-        //         EdgeSet.insert(foo);
-        //     }
-        // }
+            pair<int,int> foo;
+            foo = make_pair(u,v);
+            //没有自环，没有重边
+            if (u != v && EdgeSet.find(foo) == EdgeSet.end())
+            {
+                EdgeSet.insert(foo);
+            }
+        }
         
         init(maxn);
         // //UFS去环，保证是一颗无根树

@@ -10,7 +10,7 @@
 
 using namespace std;
 #define mem(x) memset(x,0,sizeof(x))
-const int maxn = 15;
+const int maxn = 105;
 int Previs[maxn];
 int isCut[maxn];
 int BccNum[maxn];
@@ -20,6 +20,7 @@ int cut_cnt;
 
 vector<int> G[maxn];
 vector<int> Bcc[maxn];
+
 struct Edge
 {
 	int u;
@@ -136,21 +137,21 @@ void findBcc(int n)
 	}
 }
 
-void printA()
-{
-	cout<<"The graph A is:\n";
-	cout<<"\t1 -------- 2\n";
-	cout<<"\t| \\        |\n";
-	cout<<"\t|   \\      |\n";
-	cout<<"\t|     \\    |\n";
-	cout<<"\t|       \\  |\n";
-	cout<<"\t3 -------- 4\n";
-	cout<<"\t|        / |\n";
-	cout<<"\t|      /   |\n";
-	cout<<"\t|    /     |\n";
-	cout<<"\t|  /       |\n";
-    cout<<"\t5          6\n";
-}
+// void printA()
+// {
+// 	cout<<"The graph A is:\n";
+// 	cout<<"\t1 -------- 2\n";
+// 	cout<<"\t| \\        |\n";
+// 	cout<<"\t|   \\      |\n";
+// 	cout<<"\t|     \\    |\n";
+// 	cout<<"\t|       \\  |\n";
+// 	cout<<"\t3 -------- 4\n";
+// 	cout<<"\t|        / |\n";
+// 	cout<<"\t|      /   |\n";
+// 	cout<<"\t|    /     |\n";
+// 	cout<<"\t|  /       |\n";
+//     cout<<"\t5          6\n";
+// }
 
 void getInfo(int &n,int &m)
 {
@@ -167,54 +168,77 @@ void getInfo(int &n,int &m)
 
 void feedans(int n)
 {
+	fstream out;
+	out.open("/Users/luodian/Desktop/DSA/Graph Plus/Graph Plus/DATA/Bcc.txt",ios::out);
 	findBcc(n);
 	cout<<"\nIn this graph we can find: "<<cut_cnt<<" cut vertexs\n";
+	out<<cut_cnt<<"\n";
 	cout<<"The cut vertex is : ";
+	vector<int> ret;
+	ret.clear();
 	for (int i = 1; i <= n; ++i)
 	{
 		if (isCut[i] == 1)
 		{
 			cout<<i<<" ";
+			ret.push_back(i);
+		}
+	}
+	for (int i = 0; i < ret.size(); ++i)
+	{
+		if (i != ret.size() - 1)
+		{
+			out<<ret[i]<<" ";
+		}
+		else
+		{
+			out<<ret[i]<<"\n";
 		}
 	}
 	cout<<"\n";
 	cout<<"In this graph we can find: "<<bcc_cnt<<" biconnected component\n";
+	out<<bcc_cnt<<"\n";
 	for (int i = 1; i <= bcc_cnt; ++i)
 	{
 		cout<<"In the "<<i<<"th biconnected component, there are vertexs : ";
 		for (int j = 0; j < Bcc[i].size(); ++j)
 		{
 			cout<<Bcc[i][j]<<" ";
+			if (j != Bcc[i].size() - 1)
+			{
+				out<<Bcc[i][j]<<" ";
+			}
+			else
+			{
+				out<<Bcc[i][j]<<"\n";
+			}
 		}
 		cout<<"\n";
 	}
 }
 
-void printB()
-{
-	cout<<"\nThe graph B is:\n";
-	cout<<"\t1 ------- 2\n";
-	cout<<"\t|          \n";
-	cout<<"\t|          \n";
-	cout<<"\t|          \n";
-	cout<<"\t3         4\n";
-	cout<<"\t|  \\     \n";
-	cout<<"\t|    \\   \n";
-	cout<<"\t|      \\ \n";
-	cout<<"\t5 ------- 6\n";
-}
+// void printB()
+// {
+// 	cout<<"\nThe graph B is:\n";
+// 	cout<<"\t1 ------- 2\n";
+// 	cout<<"\t|          \n";
+// 	cout<<"\t|          \n";
+// 	cout<<"\t|          \n";
+// 	cout<<"\t3         4\n";
+// 	cout<<"\t|  \\     \n";
+// 	cout<<"\t|    \\   \n";
+// 	cout<<"\t|      \\ \n";
+// 	cout<<"\t5 ------- 6\n";
+// }
 
 
 int main(int argc, const char * argv[]) 
 {
-	freopen("/Users/luodian/Desktop/in.txt","r",stdin);
+	freopen("/Users/luodian/Desktop/DSA/Graph Plus/Graph Plus/DATA/in.txt","r",stdin);
 	int n,m;
 	getInfo(n,m);
-	printA();
-	feedans(n);
 
-	getInfo(n,m);
-	printB();
 	feedans(n);
+	
     return 0;
 }
