@@ -9,7 +9,7 @@ edge_list = []
 
 
 def randomEdge(n, m):
-    file = open("/Users/luodian/Desktop/DSA/Graph Plus/Graph Plus/DATA/in.txt", 'w+');
+    file = open("/Users/luodian/Desktop/in.txt", 'w+');
     strBuffer = str(str(n) + " " + str(m) + "\n")
     file.write(strBuffer)
     edgeSet = set(tuple())
@@ -48,7 +48,7 @@ def initGraph(n, m):
     G.add_edges_from(edge_list)
     pos = nx.spring_layout(G)
 
-    nx.draw(G, pos, node_size=50, node_color='azure')
+    nx.draw(G, pos, node_size=50, node_color='azure',dpi = 233)
     plt.show()
 
 

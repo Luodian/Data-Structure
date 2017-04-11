@@ -25,6 +25,9 @@
 /* Begin PBXFileReference section */
 		F343DA081E9A2426000B08BA /* MST */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MST; sourceTree = BUILT_PRODUCTS_DIR; };
 		F343DA0B1E9A2426000B08BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F3B70A511E9A2D4F00BA49D2 /* Kruskal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Kruskal.hpp; sourceTree = "<group>"; };
+		F3B70A521E9A2D6900BA49D2 /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
+		F3B70A531E9B52A600BA49D2 /* Prim.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Prim.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				F343DA0B1E9A2426000B08BA /* main.cpp */,
+				F3B70A511E9A2D4F00BA49D2 /* Kruskal.hpp */,
+				F3B70A521E9A2D6900BA49D2 /* Header.hpp */,
+				F3B70A531E9B52A600BA49D2 /* Prim.hpp */,
 			);
 			path = MST;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				F343DA111E9A2426000B08BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

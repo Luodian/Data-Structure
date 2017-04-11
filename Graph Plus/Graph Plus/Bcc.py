@@ -77,11 +77,11 @@ def plot():
 
     # color the bcc nodes
     for i in xrange(0, len(Bcc_matrix)):
-        nx.draw_networkx_nodes(G, pos, nodelist = Bcc_matrix[i],alpha = 0.6, node_color=colors[i])
+        nx.draw_networkx_nodes(G, pos, nodelist = Bcc_matrix[i],alpha = 1, node_color=colors[i])
 
     # color the cut nodes
     nx.draw_networkx_nodes(G, pos, nodelist = cut_arr, node_color = 'salmon')
-    nx.draw_networkx_edges(G, pos, edge_color='black', alpha=0.6, width=1.0)
+    nx.draw_networkx_edges(G, pos, edge_color='black', alpha=1, width=0.8)
     nx.draw_networkx_labels(G, pos)
     # print type(node_blue)
     # nx.draw_networkx_edges(G, pos = nx.spring_layout(G), edgelist=[(1,2)], edge_color = 'blue')
