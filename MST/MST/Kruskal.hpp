@@ -17,7 +17,6 @@ class Kruskal
 {
 private:
     //领接矩阵存图
-    int Gm[maxn][maxn];
     int n,m;
 
     //领接表存边
@@ -111,7 +110,6 @@ public:
         {
             int u,v,w;
             infile>>u>>v>>w;
-            Gm[u][v] = Gm[v][u] = w;
             EdgeList[u].push_back(v);
             EdgeList[v].push_back(u);
             edge e(u,v,w);
@@ -122,15 +120,16 @@ public:
 
     void outputInfo()
     {
-        cout<<"The adjacent matrix view is : \n";
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < n; ++j)
-            {
-                cout<<Gm[i][j]<<" ";
-            }
-            cout<<"\n";
-        }
+//        cout<<"The adjacent matrix view is : \n";
+//        for (int i = 0; i < n; ++i)
+//        {
+//            for (int j = 0; j < n; ++j)
+//            {
+//                cout<<Gm[i][j]<<" ";
+//            }
+//            cout<<"\n";
+//        }
+        cout<<"\n";
         cout<<"The edge side view is : \n";
         for (int i = 0; i < n; ++i)
         {

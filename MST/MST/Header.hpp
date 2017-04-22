@@ -19,6 +19,7 @@
 #include <vector>
 #include <set>
 #include <map>
-const int maxn = 1005;
+
+const int maxn = 100005;
 
 #endif /* Header_h */

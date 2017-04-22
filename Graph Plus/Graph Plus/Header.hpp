@@ -20,5 +20,6 @@
 #include <cstdio>
 #include <set>
 #include <map>
-
+const int maxn = 105;
+#define mem(x) memset(x,0,sizeof(x))
 #endif /* Header_h */

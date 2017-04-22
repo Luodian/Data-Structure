@@ -16,7 +16,6 @@ using namespace std;
 class Prim
 {
 private:
-	int Gm[maxn][maxn];
 	struct edge
 	{
 		int u;
@@ -41,7 +40,7 @@ private:
 	void init()
 	{
 		memset(vis,0,sizeof(vis));
-		memset(Gm,0,sizeof(Gm));
+//		memset(Gm,0,sizeof(Gm));
 		TreeEdge.clear();
 		for (int i = 0; i < maxn; ++i)
 		{
@@ -68,7 +67,7 @@ public:
 		for (int i = 0; i < m; ++i)
 		{
 			infile>>u>>v>>w;
-			Gm[u][v] = Gm[v][u] = w;
+//			Gm[u][v] = Gm[v][u] = w;
 			G[u].push_back(edge(u,v,w));
 			G[v].push_back(edge(v,u,w));
 		}
@@ -128,14 +127,15 @@ public:
     void outputInfo()
     {
         cout<<"The adjacent matrix view is : \n";
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < n; ++j)
-            {
-                cout<<Gm[i][j]<<" ";
-            }
-            cout<<"\n";
-        }
+//        for (int i = 0; i < n; ++i)
+//        {
+//            for (int j = 0; j < n; ++j)
+//            {
+//                cout<<Gm[i][j]<<" ";
+//            }
+//            cout<<"\n";
+//        }
+        cout<<"\n";
         cout<<"The edge side view is : \n";
         for (int i = 0; i < n; ++i)
         {

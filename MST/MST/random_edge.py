@@ -24,4 +24,4 @@ def randomEdge(filepath,n, m):
     file.write(strBuffer)
 
 if __name__ == "__main__":
-    randomEdge("/Users/luodian/Desktop/DSA/MST/MST/DATA/bigdata.txt" ,50, 200)
+    randomEdge("/Users/luodian/Desktop/bigdata.txt" ,1000,500000)

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F3EC15E31E933B5A00A2D37E /* Biconnected Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3EC15E21E933B5A00A2D37E /* Biconnected Component.cpp */; };
+		F30FF7B71E9C615E003F3882 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F30FF7B61E9C615E003F3882 /* main.cpp */; };
+		F3EC15E31E933B5A00A2D37E /* Biconnected_Component.hpp in Sources */ = {isa = PBXBuildFile; fileRef = F3EC15E21E933B5A00A2D37E /* Biconnected_Component.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F30FF7B51E9C614F003F3882 /* Strong_Connected_Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Strong_Connected_Component.hpp; sourceTree = "<group>"; };
+		F30FF7B61E9C615E003F3882 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3EC15DF1E933B5A00A2D37E /* Graph Plus */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Graph Plus"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F3EC15E21E933B5A00A2D37E /* Biconnected Component.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = "Biconnected Component.cpp"; sourceTree = "<group>"; };
+		F3EC15E21E933B5A00A2D37E /* Biconnected_Component.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Biconnected_Component.hpp; sourceTree = "<group>"; };
 		F3EC15E91E933CC300A2D37E /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,8 +61,10 @@
 		F3EC15E11E933B5A00A2D37E /* Graph Plus */ = {
 			isa = PBXGroup;
 			children = (
-				F3EC15E21E933B5A00A2D37E /* Biconnected Component.cpp */,
+				F3EC15E21E933B5A00A2D37E /* Biconnected_Component.hpp */,
 				F3EC15E91E933CC300A2D37E /* Header.hpp */,
+				F30FF7B51E9C614F003F3882 /* Strong_Connected_Component.hpp */,
+				F30FF7B61E9C615E003F3882 /* main.cpp */,
 			);
 			path = "Graph Plus";
 			sourceTree = "<group>";
@@ -122,7 +127,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3EC15E31E933B5A00A2D37E /* Biconnected Component.cpp in Sources */,
+				F30FF7B71E9C615E003F3882 /* main.cpp in Sources */,
+				F3EC15E31E933B5A00A2D37E /* Biconnected_Component.hpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +259,7 @@
 				F3EC15E81E933B5A00A2D37E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
