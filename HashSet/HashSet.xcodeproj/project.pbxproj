@@ -25,6 +25,10 @@
 /* Begin PBXFileReference section */
 		F348FBC21EA9126500821B08 /* HashSet */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HashSet; sourceTree = BUILT_PRODUCTS_DIR; };
 		F348FBC51EA9126600821B08 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F348FBCC1EAAF49400821B08 /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
+		F348FBCE1EAAF4B800821B08 /* OpenHash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OpenHash.hpp; sourceTree = "<group>"; };
+		F348FBCF1EAAF50400821B08 /* ProbHash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ProbHash.hpp; sourceTree = "<group>"; };
+		F3986B911EB2167600C413E8 /* consisten_hash.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = consisten_hash.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				F348FBC51EA9126600821B08 /* main.cpp */,
+				F348FBCC1EAAF49400821B08 /* Header.hpp */,
+				F348FBCE1EAAF4B800821B08 /* OpenHash.hpp */,
+				F348FBCF1EAAF50400821B08 /* ProbHash.hpp */,
+				F3986B911EB2167600C413E8 /* consisten_hash.hpp */,
 			);
 			path = HashSet;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 				F348FBCB1EA9126600821B08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
