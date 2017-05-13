@@ -130,7 +130,6 @@ inline void insertion_sort(RandomIterator first,RandomIterator last)
 	using T = typename iterator_traits<RandomIterator>::value_type;
 	if (first == last)
 	{
-		//区间为空
 		return;
 	}
 	else

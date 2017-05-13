@@ -120,7 +120,7 @@ def quick_sort_function_random():
     readFile("/Users/luodian/Desktop/DSA/sort_sort_sort/sort_sort_sort/RandomData/sup_linear_quick_sort_lefist.txt",words,times)
     fig = plt.figure(figsize = (10,8))
     plt.subplot(111)
-    plt.plot(words, times, color = 'b', label="Time of quick(leftist) sort algorithm in random data")
+    plt.plot(words, times, color = 'b', label="Normal Quicksort")
     yMin = min(times)
     yMax = max(times)
 
@@ -129,14 +129,15 @@ def quick_sort_function_random():
     readFile("/Users/luodian/Desktop/DSA/sort_sort_sort/sort_sort_sort/RandomData/sup_linear_quick_sort_random.txt",words,times)
     yMin = min(min(times),yMin)
     yMax = max(max(times),yMax)
-    plt.plot(words,times, color = 'r', label = "Time of quick(random) sort algorithm in random data")
+    plt.title("Comparison between Normal Quicksort and Optimal Quicksort");
+    plt.plot(words,times, color = 'r', label = "Optimal Quicksort")
 
 
     plt.xlabel = "Scale(n)"
     plt.ylabel = "Times(s)"
     plt.legend(loc="upper right", shadow = True)
     plt.grid()
-    plt.savefig("/Users/luodian/Desktop/DSA/sort_sort_sort/sort_sort_sort/quicksort_random_data.png")
+    plt.savefig("/Users/luodian/Desktop/quicksort_random_data.png")
 
 
 def quick_sort_function_seq():
@@ -145,7 +146,7 @@ def quick_sort_function_seq():
     readFile("/Users/luodian/Desktop/DSA/sort_sort_sort/sort_sort_sort/SequntialData/sup_linear_quick_sort_lefist.txt",words,times)
     fig = plt.figure(figsize = (10,8))
     plt.subplot(111)
-    plt.plot(words, times, color = 'b', label="Time of quick(leftist) sort algorithm in sequntial data")
+    plt.plot(words, times, color = 'b', label="Normal Quicksort")
     yMin = min(times)
     yMax = max(times)
 
@@ -154,13 +155,14 @@ def quick_sort_function_seq():
     readFile("/Users/luodian/Desktop/DSA/sort_sort_sort/sort_sort_sort/SequntialData/sup_linear_quick_sort_random.txt",words,times)
     yMin = min(min(times),yMin)
     yMax = max(max(times),yMax)
-    plt.plot(words,times, color = 'r', label = "Time of quick(random) sort algorithm in sequntial data")
+    plt.plot(words,times, color = 'r', label = "Optimal Normal Quicksort")
 
     plt.xlabel = "Scale(n)"
     plt.ylabel = "Times(s)"
     plt.legend(loc="upper right", shadow = True)
     plt.grid()
-    plt.savefig("/Users/luodian/Desktop/DSA/sort_sort_sort/sort_sort_sort/quicksort_sequntial_data.png")
+    plt.title("Comparison between Normal Quicksort and Optimal Quicksort");
+    plt.savefig("/Users/luodian/Desktop/quicksort_sequntial_data.png")
 
 
 def quick_sort_function_Rseq():
@@ -188,8 +190,8 @@ def quick_sort_function_Rseq():
 
 
 if __name__ == "__main__":
-    suqare_alogrithms_random();
-    sup_linear_alogrithms_random();
-    quick_sort_function_random();
+    # suqare_alogrithms_random();
+    # sup_linear_alogrithms_random();
+    # quick_sort_function_random();
     quick_sort_function_seq();
-    quick_sort_function_Rseq();
+    # quick_sort_function_Rseq();

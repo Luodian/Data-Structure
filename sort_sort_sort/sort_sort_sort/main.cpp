@@ -727,12 +727,14 @@ public:
 		return node_a.a + node_a.b > node_b.a + node_b.b;
 	}
 };
+
 void generic_test()
 {
    	std::cout<<"V.Generic sorting test.\n";
    	std::cout<<"****************************************************\n";
 	int int_arr[10] = {0,1,4,1,2,5,213,3214,21,14};
 	float float_arr[10] = {0.1 ,2.2 ,3.2 ,4.1, 3.2, 41, 9.1, 10.123, 11.23, 12.89};
+
 	std::vector<int> vec_arr(int_arr,int_arr + 10);
 	std::deque<float> deque_arr(float_arr,float_arr + 10);
 
@@ -746,14 +748,17 @@ void generic_test()
 
    	std::cout<<"  The array after merge sort is: \n";
    	std::cout<<"  ";
-   	std::for_each(int_arr,int_arr + 10,display<int>());
-   	std::cout<<"\n\n";
 
+   	std::for_each(int_arr,int_arr + 10,display<int>());
+
+   	std::cout<<"\n\n";
 
    	std::cout<<"2.vector type sort.\n";
 	std::cout<<"  The array before merge sort is: \n";
 	std::cout<<"  ";
+
    	std::for_each(vec_arr.begin(),vec_arr.end(),display<int>());
+    
    	std::cout<<"\n\n";
 
    	merge_sort(vec_arr.begin(),vec_arr.end());
@@ -840,7 +845,7 @@ void generic_test()
 
 int main(int argc, const char * argv[]) 
 {
-	freopen("out.txt","w",stdout);	
+	// freopen("out.txt","w",stdout);	
 	unit_test();
 	// time_test(100);
 	generic_test();
