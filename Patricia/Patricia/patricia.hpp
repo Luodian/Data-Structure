@@ -35,9 +35,12 @@ namespace Radix
 		patricia_tree()
 		{
 			root = nullptr;
+			node_count = 0;
+			word_count = 0;
 		}
 		void insert(K key, V value)
 		{
+			word_count += key.size();
 			if (key.size() == 0)
 			{
 				return;
@@ -59,23 +62,36 @@ namespace Radix
 				remove(key,value,root);
 			}
 		}
-		void find(K key)
+		V find(K key)
 		{
 			if (key.size() == 0 || root == nullptr)
 			{
-				std::cout<<"can not find such key.\n";
+				throw "can not find such key.";
 			}
 			else
 			{
 				if (find(key,root) == V())
 				{
-					std::cout<<"can not find suck key.\n";
+					throw "can not find such key.";
 				}
 				else
 				{
-					std::cout<<find(key,root)<<std::endl;
+					return find(key,root);
 				}
 			}
+		}
+
+		size_t space_size()
+		{
+			//return byte num;
+			return (4 * 8 + 1 + 1 + 8 * 8) * node_count + word_count * 1 * 8;
+		}
+		
+		std::vector<std::string> prefix_search(const std::string &prefix)
+		{
+			std::vector<std::string> ret;
+			prefix_search(prefix,root,ret);
+			return ret;
 		}
 		// void f()
 		// {
@@ -84,6 +100,8 @@ namespace Radix
 		// 	std::cout<<substring(b,a)<<"\n";
 		// }
 	private:
+		size_t node_count;
+		size_t word_count;
 		std::string substring(std::string long_string, std::string short_string)
 		{
 			std::string sub;
@@ -97,6 +115,85 @@ namespace Radix
 			}
 			return sub;
 		}
+		void prefix_dfs(patricia_node<K,V> * & current_node,std::string &ans,std::vector<std::string> &ret)
+		{
+			ans += current_node->key;
+			if (current_node->terminal == 1)
+			{
+				ret.push_back(ans);
+			}
+			for (auto itr : current_node->childrens)
+			{
+				prefix_dfs(itr.second,ans,ret);
+			}
+		}
+		void prefix_search(const std::string prefix,patricia_node<K,V> * current_node,std::vector<std::string> &ret)
+		{
+			ret.clear();
+            typename std::map<char,patricia_node<K,V> *> ::iterator itr = current_node->childrens.find(prefix[0]);
+
+            if (itr != current_node->childrens.end())
+            {
+            	current_node = itr->second;
+                std::string ans_prefix;
+                ans_prefix.clear();
+                int i,j;
+            	int match_size = 0;
+            	for (i = 0; i < prefix.size();)
+            	{
+                    ans_prefix += current_node->key;
+            		size_t len = std::min(current_node->key.size(),prefix.size());
+            		j = 0;
+            		for (; j < len; ++j)
+            		{
+            			if (prefix[j] != itr->second->key[j])
+            			{
+            				break;
+            			}
+            		}
+            		match_size += j;
+            		if (match_size < prefix.size())
+            		{
+            			i += j;
+            			current_node = current_node->childrens[prefix[i]];
+            		}
+            		else if (match_size >= prefix.size())
+            		{
+            			for (auto k : current_node->childrens)
+            			{
+                            std::string ans;
+                            ans.clear();
+                            ans += ans_prefix;
+            				prefix_dfs(k.second,ans,ret);
+            			}
+                        if (current_node->terminal == 1)
+                        {
+                            ret.push_back(ans_prefix);
+                        }
+            			return;
+            		}
+            		// if (j <= current_node->key.size())
+            		// {
+            		// 	for (auto k : current_node->childrens)
+            		// 	{
+            		// 		ret.push_back(prefix_dfs(k.second));
+            		// 	}
+            		// 	return ret;
+            		// }
+            		// else
+            		// {
+            		// 	i += j;
+            		// 	current_node = current_node->childrens[prefix[i]];
+            		// }
+            	}
+            }
+            else
+            {
+            	throw "can not find this prefix.\n";
+            }
+            return;
+		}
+
 		V find(K key, patricia_node<K,V> * &current_node)
 		{
             typename std::map<char,patricia_node<K,V> *> ::iterator itr = current_node->childrens.find(key[0]);
@@ -273,6 +370,7 @@ namespace Radix
 				if (j == 0)
 				{
 					patricia_node<K,V>* new_node = new patricia_node<K,V>(key,value,1);
+					node_count ++;
 					current_node->childrens[key[0]] = new_node;
 					done = true;
 				}
@@ -285,7 +383,7 @@ namespace Radix
 						{
 							if (itr->second->terminal == 1)
 							{
-								std::cout<<"Duplicate key is found.\n";
+								// std::cout<<"Duplicate key is found.\n";
 							}
 							else
 							{
@@ -314,6 +412,7 @@ namespace Radix
 						{
 							std::string sub_str = substring(itr->second->key,key);
 							patricia_node<K,V> *sub_child = new patricia_node<K,V>(sub_str,value);
+							node_count ++;
 							sub_child->terminal = itr->second->terminal;
                             sub_child->value = itr->second->value;
 							sub_child->childrens = itr->second->childrens;
@@ -339,8 +438,8 @@ namespace Radix
 						//split at j
 						std::string child_key = itr->second->key.substr(j,itr->second->key.size()); //c
 						std::string sub_key = key.substr(j,key.size()); //d
-						std::cout<<child_key<<std::endl;
 						patricia_node<K,V>* sub_child = new patricia_node<K,V>(child_key);
+						node_count ++;
 
 						sub_child->terminal = itr->second->terminal;
 						sub_child->value = itr->second->value;//inherited father's value
@@ -352,6 +451,7 @@ namespace Radix
 						itr->second->terminal = false;
 
 						patricia_node<K,V>* sub_another_child = new patricia_node<K,V>(sub_key);
+						node_count ++;
 
 						sub_another_child->terminal = 1;
                         sub_another_child->value = value;
@@ -363,6 +463,7 @@ namespace Radix
 			if (done == false)
 			{
 				patricia_node<K,V>* new_node = new patricia_node<K,V>(key,value,1);
+				node_count++;
 				current_node->childrens[key[0]] = new_node;
 			}
 		}

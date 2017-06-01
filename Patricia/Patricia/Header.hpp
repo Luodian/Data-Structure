@@ -15,6 +15,7 @@
 #include <vector>
 #include <set>
 #include <cstdlib>
+#include <cstdio>
 #include <fstream>
 #include <list>
 #include <map>

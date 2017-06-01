@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F31BBEEC1EDAF9FF008E792E /* libboost_filesystem-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F31BBEEB1EDAF9FF008E792E /* libboost_filesystem-mt.dylib */; };
+		F31BBEED1EDAFA67008E792E /* libboost_system-mt.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F31BBEE91EDAF9F0008E792E /* libboost_system-mt.dylib */; };
 		F3BF8E8E1ED5BD52002E1706 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3BF8E8D1ED5BD52002E1706 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F31BBEE91EDAF9F0008E792E /* libboost_system-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_system-mt.dylib"; path = "../../../../../opt/local/lib/libboost_system-mt.dylib"; sourceTree = "<group>"; };
+		F31BBEEB1EDAF9FF008E792E /* libboost_filesystem-mt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libboost_filesystem-mt.dylib"; path = "../../../../../opt/local/lib/libboost_filesystem-mt.dylib"; sourceTree = "<group>"; };
+		F31BBEEE1EDB00AB008E792E /* Trie.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Trie.hpp; sourceTree = "<group>"; };
 		F3BF8E8A1ED5BD52002E1706 /* Patricia */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Patricia; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BF8E8D1ED5BD52002E1706 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3BF8E941ED5BD64002E1706 /* Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Header.hpp; sourceTree = "<group>"; };
@@ -34,17 +39,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F31BBEED1EDAFA67008E792E /* libboost_system-mt.dylib in Frameworks */,
+				F31BBEEC1EDAF9FF008E792E /* libboost_filesystem-mt.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F31BBEE81EDAF9F0008E792E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F31BBEEB1EDAF9FF008E792E /* libboost_filesystem-mt.dylib */,
+				F31BBEE91EDAF9F0008E792E /* libboost_system-mt.dylib */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F3BF8E811ED5BD52002E1706 = {
 			isa = PBXGroup;
 			children = (
 				F3BF8E8C1ED5BD52002E1706 /* Patricia */,
 				F3BF8E8B1ED5BD52002E1706 /* Products */,
+				F31BBEE81EDAF9F0008E792E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +76,7 @@
 		F3BF8E8C1ED5BD52002E1706 /* Patricia */ = {
 			isa = PBXGroup;
 			children = (
+				F31BBEEE1EDB00AB008E792E /* Trie.hpp */,
 				F3BF8E8D1ED5BD52002E1706 /* main.cpp */,
 				F3BF8E941ED5BD64002E1706 /* Header.hpp */,
 				F3BF8E961ED5BD78002E1706 /* patricia.hpp */,
@@ -137,7 +155,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -172,6 +190,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /opt/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -185,7 +205,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -214,6 +234,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /opt/local/include;
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /opt/local/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -224,6 +246,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F293UH4UUA;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -232,6 +258,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = F293UH4UUA;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -255,6 +285,7 @@
 				F3BF8E931ED5BD52002E1706 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
