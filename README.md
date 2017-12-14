@@ -11,3 +11,5 @@ This is a simple B-remote modification.
 1->2->4
 
 test fetch
+
+test push
