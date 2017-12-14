@@ -12,4 +12,4 @@ This is a simple B-remote modification.
 
 test fetch
 
-test push
+local push
