@@ -1,3 +1,3 @@
-# DSA
+# Data structures and algorithms practice
 
-Wrote in STL style, to practice my understanding in C++ and common data structures.
+I try to write them all in STL (standard library in C++) style, to practice my understandings and coding skills in common data structures and C++.
